@@ -1,0 +1,32 @@
+/* styling the button */
+#search-button {
+    border-radius: 20px;
+    border-color: rgb(90, 238, 213);
+    color: rgb(90, 238, 213);
+    background-color: white;
+    border-width: 1px;
+    width: 5%;
+}
+
+#add-button {
+    border-radius: 50%;
+    background-color: rgb(116, 238, 212);
+    border-width: 0px;
+    color: white;
+}
+
+#create-button {
+    background-color: rgb(19, 116, 226);
+    border-width: 1px;
+    color: white;
+    box-shadow: 2px 2px 1px black;
+}
+
+.spacing {
+    padding: 3px;
+    margin-left: 15px;
+}
+
+.text-size {
+    font-size: 8px;
+}

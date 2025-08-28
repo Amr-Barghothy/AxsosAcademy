@@ -1,0 +1,39 @@
+/* Styling headers */
+#cloud-color {
+    color: skyblue;
+}
+
+#cloud-header {
+    text-align: left;
+    background-color: black;
+    padding-left: 20px;
+    font-family: cursive;
+    padding: 10px;
+    margin: 10px;
+}
+
+#my-color {
+    color: white;
+}
+
+#completed-projects-header {
+    color: white;
+    text-align: center;
+    background-color: #9400D3;
+    font-style: italic;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+#contact-us-header {
+    color: rgb(23, 23, 131);
+    text-align: right;
+    background-color: skyblue;
+    font-weight: bold;
+    padding-right: 20px;
+    text-decoration: underline;
+    padding: 10px;
+    margin: 10px;
+
+}
