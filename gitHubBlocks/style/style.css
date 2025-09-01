@@ -11,18 +11,23 @@ img {
     background-color: #eaeef0;
 }
 
-h1{
+h1 {
     text-align: center;
     color: #445755;
     font-size: 70px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.firstRow {
+
+.ImgContainer {
     display: flex;
     justify-content: space-between;
-    margin: 10px 20px;
-    background-color: #5bc7f5;
+    margin: 20px 20px;
     padding: 20px;
+}
+
+#firstRowId {
+    background-color: #5bc7f5;
+
 }
 
 .secondRow {
@@ -34,11 +39,7 @@ h1{
 
 }
 
-.thirdRow {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 20px;
+#thirdRowId {
     background-color: #fcfcff;
-    padding: 20px;
 
 }
