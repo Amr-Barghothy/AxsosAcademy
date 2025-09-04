@@ -1,0 +1,98 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px auto;
+    width: 35%;
+    background-color: #cccccc;
+    padding: 20px 15px;
+}
+
+.header {
+    font-size: 50px;
+}
+
+.search-field {
+    width: 50%;
+    margin-top: 15px;
+    padding: 7px;
+}
+
+.search-btn {
+    margin-top: 10px;
+    padding: 5px;
+    color: white;
+    background-color: #2a78e3;
+    box-shadow: 2px 2px black;
+}
+
+.container {
+    width: 37%;
+    margin: 15px auto;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+
+}
+
+.ninja-container {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    border: 2px solid black;
+    margin-bottom: 10px;
+    justify-content: space-around;
+    height: 130px;
+}
+
+.ninja {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ninja-space {
+    padding: 3px 0px;
+}
+
+.likes-btn {
+    width: 100px;
+    height: 23px;
+    background-color: gold;
+    margin-top: 3px;
+}
+
+.right-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 140px;
+    width: 30%;
+    padding: 20px;
+    border: 2px solid black;
+    font-size: 28px;
+}
+
+#add-def-btn {
+    width: 80%;
+    margin-top: 15px;
+    height: 30%;
+    background-color: #92c47d;
+}
+
+.description {
+    width: 50%;
+    font-size: 14px;
+}
