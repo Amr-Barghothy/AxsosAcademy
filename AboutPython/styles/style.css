@@ -1,0 +1,270 @@
+/* REST */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Page Container */
+.container {
+    width: 970px;
+    background-color: #245075;
+    margin: 10px auto;
+    border: 2px solid #000000;
+    height: 930px;
+}
+
+/* Top Logo Container */
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#python-img {
+    width: 350px;
+    padding: 15px 0px 0px 15px;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#search-label {
+    color: white;
+    font-size: 12px;
+    margin-left: 25px;
+}
+
+.size-button {
+    color: yellow;
+    text-decoration: underline;
+    background-color: #00000000;
+    border: 0px;
+    font-size: 12px;
+}
+
+.search-function {
+    border: 10px solid #444444;
+    border-radius: 10px;
+    border-left-width: 30px;
+    background-color: #444444;
+    margin-right: 12px;
+}
+
+#search-text {
+    height: 30px;
+    text-align: center;
+    margin-right: 10px;
+    width: 150px;
+}
+
+#go-button {
+    background-color: #245075;
+    color: white;
+    border: 2px solid #bfbfbf;
+    padding: 6px 8px;
+    margin: 0px 15px 0px 1px;
+    border-radius: 5px;
+}
+
+/* Nav Container */
+.nav {
+    margin: 20px auto;
+    width: 85%;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    border: 12px solid #407bad;
+    background-color: #407bad;
+    border-radius: 8px;
+
+}
+
+.nav-item a {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 8px;
+    margin-left: 3px;
+}
+
+.nav-item a:hover {
+    opacity: 50%;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    margin: 0px auto;
+    width: 80%;
+    height: 37%;
+}
+
+/* Left Section Container */
+.left-main-container {
+    width: 25%;
+}
+
+.sections-list {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 20px;
+    list-style: none;
+}
+
+.sections-item {
+    padding: 6px 0px;
+}
+
+.sections-item a {
+    color: white;
+}
+
+.arrow-class {
+    padding-right: 10px;
+    color: #dabd40;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* Right Main Container */
+.right-main-container {
+    height: 200px;
+    width: 75%;
+    margin-left: 10px;
+}
+
+.right-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+
+.right-list {
+    color: #ffcf30;
+    margin-top: 10px;
+    list-style: none;
+    font-style: italic;
+}
+
+.right-list-items {
+    padding-top: 5px;
+    font-size: 25px;
+}
+
+#zen-text {
+    color: white;
+    font-size: 20px;
+    font-style: normal;
+}
+
+/* Bottom Container */
+.bottom-container {
+    display: flex;
+    background-color: white;
+    height: 28%;
+}
+
+.bottom-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+    padding-top: 10px;
+
+}
+
+.header {
+    border-top: 4px solid #74a7d5;
+    width: 90%;
+    padding-top: 5px;
+    padding-bottom: 8px;
+}
+
+#getting-started-text {
+    width: 85%;
+    font-size: 19px;
+}
+
+#application-text {
+    width: 78%;
+    font-size: 19px;
+
+}
+
+#pypi-id {
+    text-decoration: none;
+    color: #7aaedb;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.bottom-list {
+    list-style: square;
+    list-style-position: outside;
+    margin-top: 5px;
+}
+
+.bottom-list-items a {
+    color: #7ba6cf;
+    text-decoration: none;
+}
+
+.bottom-list-items {
+    text-align: center;
+    margin: 3px 0px;
+}
+
+#code-sample {
+    width: 80%;
+    padding-left: 25px;
+}
+
+#application-list a {
+    padding-left: 20px;
+}
+
+/* Footer Container */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px auto;
+    width: 60%;
+    height: 10%;
+    position: relative;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    color: #7aaedb;
+    margin-left: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #7aaedb;
+    padding: 15px;
+}
+
+#copyright-text {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    color: #7aaedb;
+    font-size: 10px;
+    transform: translateX(-50%);
+}
