@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likes</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <h1 id="header">Network</h1>
+    <div class="container">
+        <h1 id="title">Your Feed</h1>
+        <div class="inner-container">
+            <div class="profile-container">
+                <img src="assets/user-circle.png" id="profile-img" alt="profile-picture">
+                <button id="add-profile-btn">Add an Avatar</button>
+                <p>James Doe</p>
+            </div>
+
+            <div class="all-feed-container">
+                
+                <div class="feed-container">
+                    <div class="feed-container-data">
+                        <h1>Neil M</h1>
+                        <div class="like-container">
+                            <p><span id="neil-like">0</span> Like(s)</p>
+                            <button class="like-button" onclick="neilLike()">Like</button>
+                        </div>
+                    </div>
+                    <p class="feed-text">I just set up this new discord bot, let me know what you all think <a href="">link</a></p>
+                </div>
+
+                <div class="feed-container">
+                    <div class="feed-container-data">
+                        <h1>Nichole K</h1>
+                        <div class="like-container">
+                            <p><span id="nichole-like">0</span> Like(s)</p>
+                            <button class="like-button" onclick="nicholelike()">Like</button>
+                        </div>
+                    </div>
+                    <p class="feed-text">Just finished my <a href="">nex comic</a>, check it out</p>
+                </div>
+
+                <div class="feed-container">
+                    <div class="feed-container-data">
+                        <h1>Jim R</h1>
+                        <div class="like-container">
+                            <p><span id="jim-like">0</span> Like(s)</p>
+                            <button class="like-button" onclick="jimLike()">Like</button>
+                        </div>
+                    </div>
+                    <p class="feed-text">I can't stop listening to the <a href="">new album</a>. Who else is liking it?</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

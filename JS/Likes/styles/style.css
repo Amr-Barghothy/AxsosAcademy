@@ -1,0 +1,87 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#header {
+    margin: 0px auto;
+    width: 40%;
+    background-color: black;
+    color: white;
+}
+
+.container {
+    margin: 15px auto;
+    width: 40%;
+    text-align: center;
+}
+
+.inner-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-container {
+    height: 280px;
+    width: 30%;
+    margin-right: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 30px;
+    border: 2px solid black;
+}
+
+.feed-container {
+    height: 180px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    margin-bottom: 12px;
+}
+
+#profile-img {
+    width: 70px;
+}
+
+#add-profile-btn {
+    color: #175e9a;
+    background-color: transparent;
+    text-decoration: underline;
+    border: 0px;
+}
+
+.feed-container-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.like-container {
+    display: flex;
+    align-items: center;
+}
+
+.like-button {
+    padding: 5px;
+    background-color: #ffd966;
+    box-shadow: 2px 2px black;
+    margin-left: 25px;
+}
+
+.all-feed-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+
+}
+
+.feed-text {
+    font-size: 20px;
+    width: 85%;
+    padding-left: 25px;
+}
