@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+    <div class="top-container">
+        <div class="logo-container">
+            <img src="assets/globe.png" alt="globe" id="globe-id">
+            <h1 id="internet-text">The Inter<span class="net">net</span></h1>
+        </div>
+        <h1 id="title-text" class="header-container">The World Wide Web</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="left-container">
+            <div class="intro">
+                <h2 class="intro-title">So, what's an <span class="inter">Internet?</span></h2>
+                <p class="intro-text">An <span class="net">Inter</span>connected <span class="net">Net</span>work of
+                    computers all around the world!</p>
+                <button id="watch-btn">WATCH A VIDEO</button>
+                <button id="res-btn">MORE RESOURCES</button>
+            </div>
+            <div class="ads">
+                <h1 id="ads-title">Reinvent your career in just 14 weeks</h1>
+                <img src="assets/ninja.png" alt="Ninja" class="ninja-img">
+                <button class="ads-btn">Lern More <span id="first-arrow">></span><span
+                        id="second-arrow">></span>></button>
+            </div>
+        </div>
+
+        <div class="right-container">
+            <div class="top-main-container">
+                <div class="home">
+                    <img src="assets/home.png" alt="home" class="home-img">
+                    <p class="dns-text">DNS</p>
+                </div>
+                <div class="contact-container">
+                    <p class="contact-info">Mon - Fri 9 a.m. - 5 p.m. (EST)</p>
+                    <div class="phone-container">
+                        <img src="assets/phone.png" alt="phone" id="phone-img">
+                        <p id="phone-text">855.967.3787</p>
+                    </div>
+                    <p class="contact-info">International +1.617.963.0555</p>
+                </div>
+            </div>
+
+            <h2 class="header">Client and Servers</h2>
+            <p class="client-text">Computers connected to the <a href="" class="blue-text">Web</a> are called <span
+                    class="bold-text">clients</span> and <span class="bold-text">servers</span></p>
+            <ul class="list-container">
+                <li class="list-items"><a href="" class="blue-text">Cients</a> are the typical Web user's
+                    Internet-connected devices (for example, your computer
+                    connected to your Wi-Fi, or your phone connected to your mobile network) and <a href=""
+                        class="blue-text">Web-accessing
+                        software</a> available on those devices (usually a web browser like Firefox or Chrome).
+                </li>
+
+                <li class="list-items"><a href="" class="blue-text">Servers</a> are computers that store <a href=""
+                        class="blue-text">webpages</a>, <a href="" class="blue-text">sites</a>, or <a href=""
+                        class="blue-text">apps</a>. When a client device wants to access
+                    a webpage, a copy of the webpage is downloaded from the server onto the client machine to be
+                    displayed in the user's web browser.</li>
+            </ul>
+            <img src="assets/client_server.jpg" alt="client server cycle" id="cylce-img">
+
+            <h2 class="header">So What Actually Happens?</h2>
+            <ol class="list-container">
+                <li class="list-items">The browser goes to the <a href="" class="blue-text">DNS server</a> and finds
+                    the real address of the
+                    <a href="" class="blue-text">server</a> that the website lives on.
+                </li>
+
+                <li class="list-items">The browser sends an <a href="" class="blue-text">HTTP</a> request message to
+                    the server asking it to send
+                    a copy of the website to the client.</li>
+
+                <li class="list-items">If If the server approves the client's request, the server sends the
+                    client a <a href="" class="blue-text">"200 OK" message</a>, which means "Permission granted!
+                    Here you go!", and then starts
+                    sending the website's files to the browser as a series of small chunks.</li>
+
+                <li class="list-items">The browser assembles the small chunks into a complete website and
+                    displays it to you!</li>
+            </ol>
+
+            <div class="footer-container">
+                <img src="assets/html.png" alt="html" class="html-img">
+                <div class="html-container">
+                    <h2 class="header">The Big 3 - HTML, CSS, JavaScript</h2>
+                    <p class="html-text">While the server can process information in many different languages, the files
+                        that they serve
+                        to the client are <span class="italic-text">always</span> going to be some combination of HTML,
+                        CSS, and JavaScript!
+                    </p>
+                    <p class="html-text">Learn more about the Big 3 <a href="" class="blue-text">here!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+/* REST */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Top section container */
+.top-container {
+    margin: 3.5% auto;
+    margin-bottom: 0px;
+    width: 80%;
+}
+
+/* logo container */
+.logo-container {
+    position: absolute;
+    left: 10.5%;
+    top: 3px;
+    height: 81px;
+    display: flex;
+    align-items: center;
+}
+
+#globe-id {
+    width: 110px;
+}
+
+#internet-text {
+    font-size: 50px;
+    color: #464646;
+    margin-left: 10px
+}
+
+.net {
+    color: #1d649f;
+}
+
+.header-container {
+    background-color: #477cab;
+}
+
+#title-text {
+    font-size: 42px;
+    color: white;
+    padding: 25px;
+    font-weight: bold;
+}
+
+/* Main container */
+.main-container {
+    width: 80%;
+    height: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/* Left container */
+.left-container {
+    width: 17%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Introduction container */
+.intro {
+    height: 35%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0px 25px;
+    border-bottom: 2px solid gray;
+}
+
+.intro-title {
+    margin-bottom: 10px;
+}
+
+.inter {
+    color: red;
+}
+
+.intro-text {
+    width: 85%;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#watch-btn {
+    background-image: linear-gradient(to bottom, #5c93c0, #296da3);
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    margin: 20px 0px 5px;
+    border-radius: 8px;
+    border: 0px;
+}
+
+#res-btn {
+    /* background-color: #e9a142; */
+    background-image: linear-gradient(to bottom, #eea94b, #ee7d00);
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    border-radius: 8px;
+    border: 0px;
+}
+
+/* Ads container */
+.ads {
+    height: 65%;
+    background-image: url(../assets/ad_background.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px 0px;
+    margin-top: 20px;
+}
+
+#ads-title {
+    font-size: 34px;
+}
+
+.ninja-img {
+    width: 110px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+.ads-btn {
+    width: 85%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #2dc7e2;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#first-arrow {
+    opacity: 40%;
+}
+
+#second-arrow {
+    opacity: 60%;
+}
+
+/* Right container */
+.right-container {
+    width: 79%;
+    height: 100%;
+}
+
+/* top right main container */
+.top-main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 25px;
+    border-bottom: 2px solid gray;
+}
+
+/* Home container */
+.home {
+    display: flex;
+    align-items: center;
+    padding-bottom: 23px;
+}
+
+.home-img {
+    width: 25px;
+}
+
+.dns-text {
+    color: #26658e;
+    font-size: 20px;
+}
+
+/* Contact container */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    font-size: 10px;
+    opacity: 50%;
+}
+
+.phone-container {
+    display: flex;
+    align-items: center;
+}
+
+#phone-img {
+    width: 50px;
+}
+
+#phone-text {
+    color: #04c2e3;
+    font-size: 30px;
+}
+
+/* main content container */
+.header {
+    font-size: 26px;
+    color: #256097;
+    padding-bottom: 4px;
+}
+
+.client-text {
+    font-size: 19px;
+    padding-bottom: 4px;
+}
+
+.blue-text {
+    color: #45a7b5;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.list-container {
+    font-size: 19px;
+}
+
+.list-items {
+    padding: 5px;
+}
+
+#cylce-img {
+    width: 350px;
+    display: block;
+    margin: 0px auto;
+}
+
+/* Footer container */
+.footer-container {
+    display: flex;
+    border-top: 8px solid #0484dc;
+    border-left: 8px solid #0484dc;
+    border-right: 8px solid #0484dc;
+    padding: 18px;
+}
+
+.html-img {
+    width: 150px;
+    margin-right: 18px;
+}
+
+.html-text {
+    font-size: 19px;
+    padding: 3px;
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+ol,
+ul {
+    list-style-position: inside;
+    padding-left: 15px;
+}
