@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo weather</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div class="nav-header">
+        <div class="nav">
+            <h1 id="title">DojoWeather</h1>
+            <div class="cities">
+                <button class="city-btn" onclick="weatherLoading()">Burbank</button>
+                <button class="city-btn" onclick="weatherLoading()">Chicago</button>
+                <button class="city-btn" onclick="weatherLoading()">Dallas</button>
+            </div>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="top-content">
+            <h2>San Jose</h2>
+            <div class="degree-container">
+                <label>show temperature in </label>
+                <select class="select-container" onchange="tempConvert(this)">
+                    <option value="celsius">&degC</option>
+                    <option value="fehrenhite">&degF</option>
+                </select>
+            </div>
+        </div>
+        <div class="weather-container">
+            <div class="weather-details-container">
+                <h3 class="day-of-the-week">Today</h3>
+                <img src="assets/some_rain.png" class="cloud-img" alt="rain">
+                <p class="weather-status">some rain</p>
+                <div class="temp">
+                    <p class="high-temp"><span class="degree">24</span>&deg</p>
+                    <p class="low-temp"><span class="degree">18</span>&deg</p>
+                </div>
+            </div>
+
+            <div class="weather-details-container">
+                <h3 class="day-of-the-week">Today</h3>
+                <img src="assets/some_sun.png" class="cloud-img" alt="sun">
+                <p class="weather-status">some rain</p>
+                <div class="temp">
+                    <p class="high-temp"><span class="degree">27</span>&deg</p>
+                    <p class="low-temp"><span class="degree">19</span>&deg</p>
+                </div>
+            </div>
+
+            <div class="weather-details-container">
+                <h3 class="day-of-the-week">Today</h3>
+                <img src="assets/some_clouds.png" class="cloud-img" alt="cloud">
+                <p class="weather-status">some rain</p>
+                <div class="temp">
+                    <p class="high-temp"><span class="degree">21</span>&deg</p>
+                    <p class="low-temp"><span class="degree">16</span>&deg</p>
+                </div>
+            </div>
+
+            <div class="weather-details-container">
+                <h3 class="day-of-the-week">Today</h3>
+                <img src="assets/some_sun.png" class="cloud-img" alt="sun">
+                <p class="weather-status">some rain</p>
+                <div class="temp">
+                    <p class="high-temp"><span class="degree">26</span>&deg</p>
+                    <p class="low-temp"><span class="degree">21</span>&deg</p>
+                </div>
+            </div>
+        </div>
+        <div class="cookies-container">
+            <img src="assets/cookie.png" alt="cookie">
+            <div class="cookies-text">
+                <h2>Stop! Cookie time</h2>
+                <p>We use cookies (saffly not the edible ones) to personalize content and ads to provied social media
+                    features and to analyse our traffic. <a href="">Read more...</a></p>
+            </div>
+            <button id="accept-btn" onclick="dismissCookie(this)">I Accept</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

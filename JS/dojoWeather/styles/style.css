@@ -1,0 +1,127 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-header{ 
+    width: 100%;
+        background-color: #9fc5f8;
+        padding: 20px 0px;
+
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    width: 45%;
+    margin: 0px auto;
+    font-size: 27px;
+}
+
+.city-btn {
+    color: white;
+    background-color: transparent;
+    border: 0px;
+    padding: 10px;
+    font-size: 27px;
+}
+
+.cities :hover {
+    opacity: 50%;
+}
+
+.main-container {
+    width: 45%;
+    padding: 10px;
+    margin: 15px auto;
+    height: 750px;
+}
+
+.top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 13px;
+    font-size: 25px;
+}
+
+.weather-container {
+    display: flex;
+    justify-content: space-between;
+    height: 80%;
+    margin-top: 20px;
+}
+
+.weather-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eeeeee;
+    width: 22%;
+    height: 50%;
+    justify-content: space-around;
+
+}
+
+.cloud-img {
+    width: 120px;
+    border-radius: 50%;
+}
+
+.temp {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    font-size: 25px;
+}
+
+.high-temp {
+    color: red;
+}
+
+.low-temp {
+    color: blue;
+}
+
+.weather-status {
+    font-size: 20px;
+}
+
+.day-of-the-week {
+    font-size: 30px;
+}
+
+.select-container {
+    font-size: 20px;
+}
+
+.degree-container {
+    font-size: 20px;
+}
+
+.cookies-container {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    position: fixed;
+    bottom: 0px;
+}
+
+.cookies-text {
+    width: 80%;
+    padding: 0px 10px;
+    padding: 20px;
+}
+
+#accept-btn {
+    width: 10%;
+    font-size: 16px;
+    padding: 8px;
+    background-color: #9fc5f8;
+    box-shadow: 3px 3px;
+    margin-right: 18px;
+}
