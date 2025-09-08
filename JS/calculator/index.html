@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="left-nav">
+            <img src="assets/image.png" alt="cube" id="title-img">
+            <div class="title-text">
+                <a href="" id="title-link">Marisa</a>
+                <h1>Basic Calculator</h1>
+            </div>
+        </div>
+        <div class="right-nav">
+            <div class="btns-container">
+                <button id="heart-btn">&#10084</button>
+                <button class="nav-btn">View Source Code</button>
+                <button class="sign-up-btn">Sign up</button>
+                <button class="nav-btn">Log in</button>
+            </div>
+        </div>
+    </div>
+    <div id="calculator">
+        <div id="display">0</div>
+        <div class="sub-calc">
+            <div class="row">
+                <button onclick="press(7);" class="number-btn">7</button>
+                <button onclick="press(8);" class="number-btn">8</button>
+                <button onclick="press(9);" class="number-btn">9</button>
+                <button class="operator" onclick="setOP('/');">÷</button>
+            </div>
+            <div class="row">
+                <button onclick="press(4);" class="number-btn">4</button>
+                <button onclick="press(5);" class="number-btn">5</button>
+                <button onclick="press(6);" class="number-btn">6</button>
+                <button class="operator" onclick="setOP('*');">x</button>
+            </div>
+            <div class="row">
+                <button onclick="press(1);" class="number-btn">1</button>
+                <button onclick="press(2);" class="number-btn">2</button>
+                <button onclick="press(3);" class="number-btn">3</button>
+                <button class="operator" onclick="setOP('-');">-</button>
+            </div>
+            <div class="row">
+                <button onclick="clr();" class="number-btn">C</button>
+                <button onclick="press(0);" class="number-btn">0</button>
+                <button onclick="press('.');" class="number-btn">.</button>
+                <button class="operator" onclick="setOP('+');">+</button>
+            </div>
+            <div class="row">
+                <button id="equals" onclick="calculate()">=
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

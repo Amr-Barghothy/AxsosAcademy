@@ -1,0 +1,138 @@
+/* REST */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Nav container */
+.nav {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    justify-content: space-between;
+    color: white;
+    height: 120px;
+    padding: 0px 15px;
+}
+
+/* Left Nav Container */
+.left-nav {
+    display: flex;
+    align-items: center;
+}
+
+#title-img {
+    width: 100px;
+}
+
+#title-link {
+    text-decoration: none;
+    color: white;
+    opacity: 50%;
+    font-size: 22px;
+}
+
+#title-link:hover {
+    opacity: 100%;
+}
+
+/* Right Nav Container */
+.right-nav {
+    display: flex;
+    align-items: center;
+}
+
+.btns-container {
+    display: flex;
+    align-items: center;
+}
+
+#heart-btn {
+    background-color: #444857;
+    color: white;
+    font-size: 40px;
+    border-radius: 14px;
+    width: 100px;
+    height: 82px;
+}
+
+.nav-btn {
+    background-color: #444857;
+    color: white;
+    font-size: 30px;
+    padding: 25px;
+    border-radius: 14px;
+    margin: 0px 10px;
+}
+
+.sign-up-btn {
+    background-color: #47cf73;
+    font-size: 30px;
+    padding: 25px;
+    border-radius: 14px;
+}
+
+/* Main Calculator Container */
+#calculator {
+    margin: 15px auto;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222222;
+    border-radius: 30px;
+}
+
+#display {
+    color: white;
+    align-self: flex-end;
+    margin-right: 20px;
+    font-size: 105px;
+}
+
+/* Sub container for better width */
+.sub-calc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 130%;
+}
+
+/* Rows Container */
+.row {
+    width: 60%;
+}
+
+.number-btn {
+    color: black;
+    background-color: #666666;
+    border-radius: 50%;
+    color: white;
+    border-color: transparent;
+    font-size: 70px;
+    padding: 10px 0px;
+    margin: 10px;
+    width: 20%;
+}
+
+.operator {
+    background-color: #ff8c00;
+    border-radius: 50%;
+    border-color: transparent;
+    margin: 3px;
+    font-size: 70px;
+    padding: 10px 25px;
+    color: white;
+    width: 20%;
+
+}
+
+
+#equals {
+    background-color: #cccccc;
+    border-radius: 60px;
+    border-color: transparent;
+    font-size: 70px;
+    margin: 15px;
+    width: 90%;
+}
