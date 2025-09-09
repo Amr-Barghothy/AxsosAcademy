@@ -1,0 +1,113 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#face {
+    background-color: #f3f3f3;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 6px solid black;
+    position: relative;
+    margin: 15px auto;
+}
+
+#minutes,
+#hour,
+#seconds {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: top center;
+}
+
+#seconds {
+    background-color: red;
+    height: 130px;
+    width: 2px;
+}
+
+#hour {
+    background-color: black;
+    height: 100px;
+    width: 8px;
+    transform: rotate(125deg);
+}
+
+#minutes {
+    background-color: grey;
+    height: 120px;
+    width: 4px;
+    transform: rotate(255deg);
+    z-index: 2;
+}
+
+/* Nav container */
+.nav {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    justify-content: space-between;
+    color: white;
+    height: 120px;
+    padding: 0px 15px;
+}
+
+/* Left Nav Container */
+.left-nav {
+    display: flex;
+    align-items: center;
+}
+
+#title-img {
+    width: 100px;
+}
+
+#title-link {
+    text-decoration: none;
+    color: white;
+    opacity: 50%;
+    font-size: 22px;
+}
+
+#title-link:hover {
+    opacity: 100%;
+}
+
+/* Right Nav Container */
+.right-nav {
+    display: flex;
+    align-items: center;
+}
+
+.btns-container {
+    display: flex;
+    align-items: center;
+}
+
+#heart-btn {
+    background-color: #444857;
+    color: white;
+    font-size: 40px;
+    border-radius: 14px;
+    width: 100px;
+    height: 82px;
+    margin-right: 10px;
+}
+
+.nav-btn {
+    background-color: #444857;
+    color: white;
+    font-size: 30px;
+    padding: 25px;
+    border-radius: 14px;
+    margin: 0px 10px;
+}
+
+.sign-up-btn {
+    background-color: #47cf73;
+    font-size: 30px;
+    padding: 25px;
+    border-radius: 14px;
+}
