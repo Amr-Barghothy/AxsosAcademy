@@ -1,0 +1,21 @@
+from Zoo import *
+
+lala_zoo = Zoo("LALA Zoo")
+lala_zoo.add_animal("Simba",15,5,22,"Big","lion")
+lala_zoo.add_animal("Malmo",5,33,16,"Small","lion")
+lala_zoo.add_animal("harambe",17,10,18,100,"monkey")
+lala_zoo.add_animal("Winnie The Pooh",34,30,50,"Golden Short","bear")
+
+lala_zoo.print_all_info()
+print()
+lala_zoo.animals[0].feed(21)
+print()
+lala_zoo.animals[1].feed(21)
+print()
+lala_zoo.animals[2].feed("Banana")
+print()
+lala_zoo.animals[2].feed("Strawberry")
+print()
+lala_zoo.animals[3].feed("Honey")
+print()
+lala_zoo.animals[3].feed("Not Honey")
