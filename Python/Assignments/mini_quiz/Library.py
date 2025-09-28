@@ -1,4 +1,5 @@
 class Library:
+    # defining the common attribute
     def __init__(self, borrowing, returning, checking_availability,price,title):
         self.borrowing = borrowing
         self.returning = returning
@@ -6,6 +7,7 @@ class Library:
         self.price = price
         self.title = title
 
+    # define common methods
     def borrow(self):
         if self.checking_availability:
             self.borrowing = True
@@ -30,6 +32,7 @@ class Library:
             print("The item is available")
             return True
 
+    # Declaring this method simply to use it later in the children to make use of it
     def late_fee_calculation(self):
         print("An additional late fee was added")
 
