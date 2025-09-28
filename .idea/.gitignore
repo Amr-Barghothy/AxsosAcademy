@@ -6,6 +6,6 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-../Python/python stack/my environments/
+../Python/python_stack/my_environments/
 /Web-Fund.iml
 /.name
