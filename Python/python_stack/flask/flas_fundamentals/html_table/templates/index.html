@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center h-screen">
+<table class="border border-gray-300 ">
+    <tr class="border-r border-b border-gray-300 border-solid">
+        <th class="border-r border-b border-gray-300 border-solid pr-20 p-2">First Name</th>
+        <th class="border-r border-b border-gray-300 border-solid pr-20 p-2">Last Name</th>
+        <th class="border-r border-b border-gray-300 border-solid pr-24 p-2">Full Name</th>
+    </tr>
+    {% for row in users %}
+    <tr class="p-5">
+        <td class="border-r border-b border-gray-300 border-solid p-2">{{ row.first_name }}</td>
+        <td class="border-r border-b border-gray-300 border-solid p-2">{{ row.last_name }}</td>
+        <td class="border-r border-b border-gray-300 border-solid p-2">{{ row.first_name}} {{row.last_name}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="main-container">
+    {% if color1 is none and color2 is none: %}
+    {% for i in range(rows) : %}
+    <div class="container">
+        {% for j in range(cols) : %}
+        {% if (i+j) % 2 == 0 : %}
+        <div class="box"></div>
+        {% else : %}
+        <div class="box2"></div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
+    {% else %}
+    {% for i in range(rows) : %}
+    <div class="container">
+        {% for j in range(cols) : %}
+        {% if (i+j) % 2 == 0 : %}
+        <div class="color1" style="--c: {{color1}}"></div>
+        {% else : %}
+        <div class="color2" style="--v: {{color2}}"></div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+
+</body>
+</html>
