@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    </head>
+    <body>
+        <div class="flex justify-center border mx-auto max-w-md rounded bg-gray-50 p-6 mt-20">
+            <form action="/result" method="post">
+                <div class="flex items-center mb-4">
+                    <label for="name" class="w-40">Your Name:</label>
+                    <input type="text" id="name" name="name" class="border border-black w-1/2">
+                </div>
+
+                <div class="flex items-center mb-4">
+                    <label for="location" class="w-40">Dojo Location:</label>
+                    <select name="location" id="location" class="border border-black w-1/2 ">
+                        <option value="San Jose">San Jose</option>
+                        <option value="San Francisco">San Francisco</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                    </select>
+                </div>
+                <div class="flex items-center mb-4">
+                    <label for="fav-lang" class="w-40">Favorite Language</label>
+                    <select name="fav-lang" id="fav-lang" class="border border-black w-1/2">
+                        <option value="Java">Java</option>
+                        <option value="Python">Python</option>
+                        <option value="PHP">PHP</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <p>Have any Experiences?</p>
+                    <input type="radio" id="experienced" name="answer" value="Yes" >
+                    <label for="experienced">Yes</label><br>
+                    <input type="radio" id="not_experienced" name="answer" value="No">
+                    <label for="not_experienced">No</label>
+                </div>
+
+                <div class="mb-4">
+                    <p>What do you speak</p>
+                    <input type="checkbox" id="arabic" name="Lang" value="Arabic">
+                    <label for="arabic"> Arabic </label> <br>
+                    <input type="checkbox" id="english" name="Lang" value="English">
+                    <label for="english"> English </label>
+                </div>
+
+                <div class="flex  flex-col">
+                    <label for="comments" class="mb-2">Comment (optional)</label>
+                    <textarea name="comments" id="comments" cols="30" rows="5"
+                              class="border border-black w-full"></textarea>
+                </div>
+
+                <div class="flex justify-end mb-4">
+                    <input type="submit" value="Submit"
+                           class="border-2 w-30 border-black bg-[#76a5af] text-white leading-none py-1 shadow-[2px_2px_black] mt-3">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

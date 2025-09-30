@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Result</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <div class="flex  border mx-auto max-w-md rounded bg-gray-50 p-6 mt-20 flex-col">
+            <h1 class="underline underline-offset-2">Submitted Info</h1>
+            <div class="mx-6">
+                <div class="flex">
+                    <p class="w-60">Name: </p>
+                    <p class="w-1/2">{{name}}</p>
+                </div>
+                <div class="flex items-center ">
+                    <p class="w-60">Dojo Location: </p>
+                    <p class="w-1/2">{{dojo_location}}</p>
+                </div>
+                <div class="flex items-center ">
+                    <p class="w-60">Favorite Language: </p>
+                    <p class="w-1/2">{{fav_lang}}</p>
+                </div>
+                <div class="flex items-center ">
+                    <p class="w-60">Comment: </p>
+                    <p class="w-1/2">{{comment}}</p>
+                </div>
+                <div class="flex items-center ">
+                    <p class="w-60">Experienced: </p>
+                    <p class="w-1/2">{{exp}}</p>
+                </div>
+                <div class="flex items-center ">
+                    <p class="w-60">Languages: </p>
+                    <p class="w-1/2">
+                        {% for item in lan : %}
+                        {{item}}
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
+            <form action="/">
+                <div class="flex justify-end mt-24">
+                    <button class="border-2 w-30 border-black bg-[#76a5af] text-white leading-none py-1 shadow-[2px_2px_black]">
+                        Go Back
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </body>
+</html>
