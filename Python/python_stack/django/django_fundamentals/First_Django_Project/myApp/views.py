@@ -12,7 +12,7 @@ def index( request ):
 
 
 def new( request ):
-    return render(request, 'new.html')
+    return HttpResponse("placeholder to display a new form to create a new blog")
 
 
 def create( request ):
@@ -20,21 +20,18 @@ def create( request ):
 
 
 def show( request, number ):
-    s = { "num": number }
-    print(s)
-    return render(request, 'show.html', s)
+    return HttpResponse(f"placeholder to display blog number {number}")
 
 
 def edit( request, number ):
-    s = { "num": number }
-    return render(request, 'edit.html', s)
+    return HttpResponse(f"placeholder to edit blog {number}")
 
 
-def destroy( request ):
+def destroy( request ,number ):
     return redirect("/blogs")
 
 
 def json( request ):
     context = { "title": "My First Blog",
                 "content": "Lorem ipsum dolor sit amet, consetetur sadipscing eli" }
-    return JsonResponse({"response": context, "status": True})
+    return JsonResponse({ "response": context, "status": True })
