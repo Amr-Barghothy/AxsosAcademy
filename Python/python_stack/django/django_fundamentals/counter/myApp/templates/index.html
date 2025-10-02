@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Counter</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <div class="flex flex-col justify-center items-center h-screen">
+            <h1 class="mb-4 text-5xl">Counter</h1>
+            <p class="text-3xl">Visited: {{ request.session.num }} times</p>
+            <p class="text-3xl">Incremented: {{ request.session.custom }} times</p>
+            <div class="mt-8">
+                <a href="/destroy_session" class="bg-cyan-400 text-xl rounded p-2 border-1 hover:bg-cyan-600">
+                    Reset</a>
+                <a href="/inc_by_two" class="bg-cyan-400 text-xl rounded p-2 border-1 hover:bg-cyan-600">
+                    Add 2</a>
+            </div>
+            <form action="/custom_inc" method="post" class="mt-8">
+                {% csrf_token %}
+                <label for="custom_num">Enter Your Number:</label>
+                <input type="text" name="custom_num" id="custom_num"
+                       placeholder="Enter custom number" pattern="[0-9]+" class="border-1 p-2">
+                <input type="submit" value="increase">
+            </form>
+        </div>
+
+    </body>
+</html>
