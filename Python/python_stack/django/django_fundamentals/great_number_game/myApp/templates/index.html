@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Guessing Game</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <div class=" flex flex-col justify-center items-center h-screen gap-y-7">
+            <h1 class="text-3xl font-bold">Welcome to the Great Number Game</h1>
+            <h2 class="text-xl">I am thinking of a number between 1 and 100<span
+                    class="block text-center">Take a guess!</span></h2>
+            {% if "guessed" in request.session %}
+                {% if request.session.guessed < request.session.number %}
+                    <div class="bg-red-600 w-[20%] h-[30%] flex text-center align-center border-4">
+                        <p class="text-white text-4xl m-auto">Too Low!</p>
+                    </div>
+                {% elif request.session.guessed > request.session.number %}
+                    <div class="bg-red-600 w-[20%] h-[30%] flex text-center align-center border-4">
+                        <p class="text-white text-4xl m-auto">Too High!</p>
+                    </div>
+                {% else %}
+                    <div class="bg-green-600 w-[20%] h-[30%] flex flex-col text-center align-center border-4">
+                        <p class="text-white text-4xl m-auto">{{ request.session.number }} was the <span
+                                class="block">Number!</span></p>
+                        <form method="POST" action="/reset">
+                            {% csrf_token %}
+                            <input type="submit" value="Play Again!" class="bg-white border-2 p-1 mb-10 cursor-pointer">
+                        </form>
+                    </div>
+                {% endif %}
+            {% endif %}
+            {% if request.session.guessed != request.session.number %}
+                <form action="/guess" method="post">
+                    {% csrf_token %}
+                    <div class="flex flex-col items-center ">
+                        <label for="number"></label>
+                        <input type="text" name="number" id="number" class="border-2 rounded" required>
+                        <button type="submit" class="border-2 rounded mt-2 w-30 shadow-[2px_2px_black] cursor-pointer" >
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            {% endif %}
+        </div>
+    </body>
+</html>
