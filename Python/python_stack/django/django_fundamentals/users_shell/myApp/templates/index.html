@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>users</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="h-[100vh] w-full">
+    <div class="flex flex-col items-center justify-center h-80/100 ">
+        <h1 class="font-bold text-5xl mt-5 mb-10">All the Users</h1>
+        <div class="overflow-y-auto h-auto">
+            <table class="w-150 text-left border-2">
+                <tr class="bg-gray-400">
+                    <th class="border-r-2 p-5">ID</th>
+                    <th class="border-r-2 p-5">Name</th>
+                    <th class="border-r-2 p-5">Email</th>
+                    <th class="border-r-2 p-5">Age</th>
+                </tr>
+                {% for user in all_users %}
+                    <tr class=" even:bg-gray-200 p-5">
+                        <td class="border-r-2 p-5">{{ user.id }}</td>
+                        <td class="border-r-2 p-5">{{ user.first_name }} {{ user.last_name }}</td>
+                        <td class="border-r-2 p-5">{{ user.email_address }}</td>
+                        <td class="border-r-2 p-5">{{ user.age }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="border-t-2 mt-10 mb-10 w-[60%]"></div>
+        <h2 class="font-bold text-5xl mb-10">Add a User</h2>
+        <form action="/add_user" method="post" class="w-200 flex flex-col items-center justify-center">
+            {% csrf_token %}
+            <div class="flex justify-center">
+                <div class="flex flex-col">
+                    <div class="w-80">
+                        <label for="first_name" class="">First Name</label>
+                        <input id="first_name" name="first_name" type="text" class="border-2">
+                    </div>
+                    <div class="mt-4">
+                        <label for="email" class="mr-[2.4rem]">Email</label>
+                        <input id="email" name="email" type="email" class="border-2">
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <div>
+                        <label for="last_name">Last Name</label>
+                        <input id="last_name" name="last_name" type="text" class="border-2">
+                    </div>
+                    <div class="mt-4">
+                        <label for="age" class="mr-[2.9rem]">Age </label>
+                        <input id="age" name="age" type="text" class="border-2">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="border-2 p-1 rounded shadow-[2px_2px_black] mt-10 cursor-pointer">Add</button>
+        </form>
+    </div>
+</body>
+</html>
