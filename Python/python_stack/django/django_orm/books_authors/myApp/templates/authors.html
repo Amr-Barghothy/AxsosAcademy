@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authors</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="flex justify-between items-center w-50/100 mx-auto mt-10">
+        <div class="">
+            <h1 class="font-bold text-4xl mb-10 ml-10">Add an Author</h1>
+            <form action="/add_an_author" method="post" class="w-full flex flex-col">
+                {% csrf_token %}
+                <div class="flex items-center mb-5">
+                    <label for="fname" class="w-30">First Name</label>
+                    <input type="text" name="fname" id="fname" class="border-2 rounded">
+                </div>
+                 <div class="flex items-center mb-5">
+                    <label for="lname" class="w-30">Last Name</label>
+                    <input type="text" name="lname" id="lname" class="border-2 rounded">
+                </div>
+                <div class="flex  mb-5">
+                    <label for="notes" class="w-30">Notes</label>
+                    <textarea name="notes" id="notes" cols="30" rows="5" class="border-2 rounded"></textarea>
+                </div>
+                <button type="submit" class="flex justify-center mb-5 border-2 border-cyan-600 shadow-[2px_2px_black] self-center mr-20 rounded bg-cyan-400 p-1">Add</button>
+            </form>
+        </div>
+        <div class="mt-10">
+            <table class="text-left w-70">
+                <tr class="border bg-gray-400">
+                    <th class="p-2 border-r-2">ID</th>
+                    <th class="p-2 border-r-2">Name</th>
+                    <th class="p-2 border-r-2">Action</th>
+                </tr>
+                {% for author in authors %}
+                <tr class="border-2 rounded even:bg-gray-200">
+                    <td class="p-4 border-r-2">{{ author.id }}</td>
+                    <td class="p-4 border-r-2">{{ author.first_name }} {{ author.last_name }}</td>
+                    <td class="p-4 border-r-2"><a href="/authors/{{ author.id }}" class="text-blue-600 underline">View</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

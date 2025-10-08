@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author details</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="mx-auto w-80/100 flex flex-col gap-y-5 mt-10">
+        <p class="font-bold text-4xl">{{ curr_author.first_name }} {{ curr_author.last_name }}</p>
+        <p class="text-2xl">ID: {{ curr_author.id }}</p>
+        <div class="flex gap-x-8">
+            <label for="notes" class="text-2xl">Notes: </label>
+            <textarea name="notes" id="notes" cols="40" rows="5"
+                      class="font-bold text-2xl">{{ curr_author.notes }}</textarea>
+        </div>
+        <p class="text-2xl">Books:</p>
+        <ul class="list-disc list-inside pl-4">
+            {% for book in curr_author.books.all %}
+            <li class="text-xl">{{ book.title }}</li>
+            {% endfor %}
+
+        </ul>
+        <form action="/add_book_to_author" method="post" class="flex items-center">
+            {% csrf_token %}
+            <label for="book"></label>
+            <select name="book" id="book" class="border-2 w-30 text-xl rounded mx-4">
+                {% for book in books %}
+                {% if book not in curr_author.books.all %}
+                <option value="{{ book.id }}">{{ book.title }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+            <input type="hidden" name="author_id" value="{{ curr_author.id }}">
+            <button type="submit" class="border-2 border-cyan-600 shadow-[2px_2px_black] rounded bg-cyan-400 p-1">Add
+            </button>
+        </form>
+
+    </div>
+</body>
+</html>
