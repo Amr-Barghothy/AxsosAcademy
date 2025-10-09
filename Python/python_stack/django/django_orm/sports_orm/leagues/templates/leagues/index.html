@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sports Leagues</title>
+</head>
+<body>
+    <h1>All Baseball</h1>
+    <ul>
+        {% for baseball in baseballs %}
+        <li><span>Name:</span> {{ baseball.name }} <span>Sport:</span> {{ baseball.sport }}</li>
+        {% endfor %}
+    </ul>
+    <h1>All Women</h1>
+    <ul>
+        {% for women in womens %}
+        <li><span>Name:</span> {{ women.name }} <span>Sport:</span> {{ women.sport }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Any Hockey</h1>
+    <ul>
+        {% for hockey in hockeys %}
+        <li><span>Name:</span> {{ hockey.name }} <span>Sport:</span> {{ hockey.sport }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Exclude Football</h1>
+    <ul>
+        {% for football in footballs %}
+        <li><span>Name:</span> {{ football.name }} <span>Sport:</span> {{ football.sport }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Conferences</h1>
+    <ul>
+        {% for conference in conferences %}
+        <li><span>Name:</span> {{ conference.name }} <span>Sport:</span> {{ conference.sport }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Atlantic</h1>
+    <ul>
+        {% for atlantic in atlantics %}
+        <li><span>Name:</span> {{ atlantic.name }} <span>Sport:</span> {{ atlantic.sport }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Dallas</h1>
+    <ul>
+        {% for dal in dallas %}
+        <li><span>Team Name:</span> {{ dal.team_name }} <span>Location:</span> {{ dal.location }}</li>
+        {% empty %}
+        <li>There is no teams based in Dallas</li>
+        {% endfor %}
+    </ul>
+    <h1>Raptors</h1>
+    <ul>
+        {% for raptor in raptors %}
+        <li><span>Team Name:</span> {{ raptor.team_name }} <span>Location:</span> {{ raptor.location }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Teams with City in Name</h1>
+    <ul>
+        {% for city in teams %}
+        <li><span>Team Name:</span> {{ city.team_name }} <span>Location:</span> {{ city.location }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Teams Starts with T</h1>
+    <ul>
+        {% for t in T %}
+        <li><span>Team Name:</span> {{ t.team_name }} <span>Location:</span> {{ t.location }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Ordered Alphabetically</h1>
+    <ul>
+        {% for asc in sorted_asc %}
+        <li><span>Team Name:</span> {{ asc.team_name }} <span>Location:</span> {{ asc.location }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Reversed Order by Team Name</h1>
+    <ul>
+        {% for reversed in sorted_desc %}
+        <li><span>Team Name:</span> {{ reversed.team_name }} <span>Location:</span> {{ reversed.location }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Player with Last name Cooper</h1>
+    <ul>
+        {% for cooper in coopers %}
+        <li>{{ cooper.first_name }} {{ cooper.last_name }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Player named Joshua</h1>
+    <ul>
+        {% for joshua in joshuas %}
+        <li>{{ joshua.first_name }} {{ joshua.last_name }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Cooper without Joshua</h1>
+    <ul>
+        {% for without in without_joshua %}
+        <li>{{ without.first_name }} {{ without.last_name }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Alexander or Wyatt</h1>
+    <ul>
+        {% for alex in alexs %}
+        <li>{{alex.first_name}} {{ alex.last_name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
