@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sports Leagues</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="w-95/100 mx-auto mt-10">
+        <h1 class="font-bold text-3xl">All teams in Atlantic</h1>
+        <ul>
+            {% for team in all_teams_atlantic %}
+            <li><span class="font-bold">{{ team.league.name }}:</span> {{ team.team_name }} {{ team.location }}</li>
+            {% empty %}
+            <li>No teams found</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Players in Boston Penguins</h1>
+        <ul>
+            {% for player in all_players_in_penguin %}
+            <li><span class="font-bold">{{ player.curr_team.location }} {{ player.curr_team.team_name }}:</span> {{
+                player.first_name }} {{ player.last_name }}
+            </li>
+            {% empty %}
+            <li>No Players in this team or location</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Current Players in International Collegiate Baseball Conference</h1>
+        <ul>
+            {% for player in all_current_players_in_international_collegiate_baseball_conference %}
+            <li><span class="font-bold">Player Name: </span> {{ player.first_name }} {{ player.last_name }}</li>
+            {% empty %}
+            <li>No players found</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Players in American Conference of Amateur</h1>
+        <ul>
+            {% for player in all_players_in_american_conference_of_amateur %}
+            <li><span class="font-bold">Player Name: </span> {{ player.first_name }} {{ player.last_name }}</li>
+            {% empty %}
+            <li>No players found</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Football Players</h1>
+        <ul>
+            {% for player in all_football_players %}
+            <li><span class="font-bold">{{ player.curr_team.league.name }}:</span> {{ player.first_name }} {{ player.last_name }}</li>
+            {% empty %}
+            <li>No football players found</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Teams with Sophia</h1>
+        <ul>
+            {% for team in all_teams_with_sophia %}
+            <li><span class="font-bold">Team Name: </span> {{ team.team_name }} {{ team.location }}</li>
+            {% empty %}
+            <li>No teams found</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Leagues with Sophia</h1>
+        <ul>
+            {% for league in all_leagues_with_sophia %}
+            <li><span class="font-bold">League Name: </span> {{ league.name }}</li>
+            {% empty %}
+            <li>No leagues found</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Flores not in Washington</h1>
+        <ul>
+            {% for player in all_flores_not_in_washington %}
+            <li> <span class="font-bold">Player Name: </span> {{ player.first_name }} {{ player.last_name }}</li>
+            {% empty %}
+            <li>No players found</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Teams Samuel Evans Played With</h1>
+        <ul>
+            {% for team in all_teams_samuel_evans_played_with %}
+            <li><span class="font-bold">Team: </span> {{ team.team_name }} {{ team.location }}</li>
+            {% empty %}
+            <li>No teams found</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Players with Manitoba Tigercats</h1>
+        <ul>
+            {% for player in all_players_with_manitoba_tigercats %}
+            <li><span class="font-bold">Player Name: </span> {{ player.first_name }} {{ player.last_name }}</li>
+            {% empty %}
+            <li>No players found</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Players not in Vikings Anymore</h1>
+        <ul>
+            {% for player in all_players_not_in_vikings_anymore %}
+            <li><span class="font-bold">Player Name: </span>  {{ player.first_name }} {{ player.last_name }}</li>
+            {% empty %}
+            <li>No players found</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Teams with Jacob Before Colts</h1>
+        <ul>
+            {% for team in all_teams_with_jacob_before_colts %}
+            <li><span class="font-bold">Team: </span> {{ team.team_name }} {{ team.location }}</li>
+            {% empty %}
+            <li>No teams found</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Joshuas in Atlantic Federation</h1>
+        <ul>
+            {% for player in all_joshuas_in_atlantic_federation %}
+            <li><span class="font-bold">Player Name: </span>  {{ player.first_name }} {{ player.last_name }}</li>
+            {% empty %}
+            <li>No Joshuas found</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Teams with 12 or More Players</h1>
+        <ul>
+            {% for team in all_teams_with_12_or_more_players %}
+            <li><span class="font-bold">Team Name: </span> {{ team.location }} {{ team.team_name }}</li>
+            {% empty %}
+            <li>No teams found</li>
+            {% endfor %}
+        </ul>
+
+        <h1 class="font-bold text-3xl">All Players and Their Team Counts</h1>
+        <ul>
+            {% for player in all_players_and_team_counts %}
+            <li><span class="font-bold">Player Name: </span>  {{ player.first_name }} {{ player.last_name }} - <span class="font-bold">Teams: </span> {{ player.num_teams }}</li>
+            {% empty %}
+            <li>No data found</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
