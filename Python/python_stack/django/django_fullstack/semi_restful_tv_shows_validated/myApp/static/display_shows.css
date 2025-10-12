@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 900px;
+  height: 900px;
+  margin: 0 auto;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  padding-top: 7%;
+}
+table,
+th,
+td {
+  border: 2px black solid;
+}
+td a {
+  margin: 0px 5px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+}
+.table-div {
+  margin-top: 15px;
+  height: 300px;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a:hover {
+  color: lightblue;
+}

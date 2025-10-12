@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add a Show</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="flex flex-col items-center justify-center mt-10 gap-7">
+        <a
+                href="/"
+                class="text-blue-700 underline fixed right-10 top-5 hover:text-blue-500"
+        >Go Back</a
+        >
+        <h1 class="font-bold text-3xl text-left">Edit Show {{id}}</h1>
+        <form action="/edit" method="post" class="flex flex-col gap-7">
+            {% csrf_token %}
+            <input type="hidden" name="hidden" value="{{id}}"/>
+            <div class="flex flex-col">
+                <label for="title">Title</label>
+                <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        class="border-2 rounded"
+                        value="{{title}}"
+                />
+            </div>
+
+            <div class="flex">
+                <div class="flex flex-col">
+                    <label for="network">Network</label>
+                    <input
+                            type="text"
+                            name="network"
+                            id="network"
+                            class="border-2 rounded w-4/5"
+                            value="{{network}}"
+                    />
+                </div>
+                <div class="flex flex-col">
+                    <label for="release_date">Release Date</label>
+                    <input
+                            type="date"
+                            id="release_date"
+                            name="release_date"
+                            class="border-2 rounded"
+                            value="{{release_date}}"
+                    />
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="desc">Description</label>
+                <textarea
+                        name="desc"
+                        id="desc"
+                        cols="30"
+                        rows="5"
+                        class="border-2 rounded"
+                ></textarea>
+            </div>
+            <button
+                    type="submit"
+                    class="self-center border-2 shadow-[2px_2px_black] p-1 cursor-pointer"
+            >
+                Update
+            </button>
+        </form>
+        <a href="/shows/{{id}}" class="text-blue-700 underline hover:text-blue-500">Go To Show</a>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="text-red-600 font-bold" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
