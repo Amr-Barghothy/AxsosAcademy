@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <a href="/logout" class="text-blue-500 hover:text-blue-400 underline fixed top-5 right-5">Logout</a>
+    <h1 class="font-bold text-3xl">Success! Welcome, {{ request.session.name }}</h1>
+    <h2 class="text-green-600 font-bold text-2xl">
+        {% if messages %}
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+        {% endif %}
+    </h2>
+</body>
+</html>
