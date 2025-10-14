@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <nav class="w-90/100 mx-auto flex items-center justify-between flex-wrap border-b-2 pb-5 mt-5">
+        <h1 class="font-bold text-3xl">Welcome, {{user.first_name}} </h1>
+        <div class="flex items-center gap-x-8">
+            <a href="/books" class="text-blue-400 text-xl underline">Go back</a>
+            <a href="/logout" class="text-blue-400 text-xl underline">Logout</a>
+        </div>
+    </nav>
+    {% if is_author %}
+    <div class="w-90/100 mx-auto mt-10 flex">
+        <div class="w-20/100 flex flex-col gap-y-5">
+            <h1 class="font-bold text-3xl">{{book.title}}</h1>
+            <p>Added by: {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}}</p>
+            <p>Added on: {{book.created_at}}</p>
+            <p>Last updated on: {{book.updated_at}}</p>
+            <form action="/update_book/{{book.id}}" method="post" class="flex flex-col">
+                {% csrf_token %}
+                <div class="flex">
+                    <label for="desc" class="w-30">Description</label>
+                    <textarea name="desc" id="desc" cols="23" rows="5"
+                              class="border-2 rounded w-full">{{book.desc}}</textarea>
+                </div>
+                <div class="flex items-center justify-center gap-x-5">
+                    <button type="submit" class="border-2 p-1 rounded mt-5 w-1/4 shadow-[2px_2px] cursor-pointer">Update
+                    </button>
+                    <a href="books/delete_book/{{book.id}}"
+                       class=" bg-red-600 border-2 border-black p-1 rounded mt-5 text-white w-1/4 shadow-[2px_2px_black] ">Delete</a>
+                </div>
+            </form>
+            {% if messages %}
+            <ul class="mt-10">
+                {% for message in messages %}
+                <li class="font-bold text-red-600 text-xl">{{message}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div class="w-40/100 mx-auto flex flex-col gap-y-3">
+            <h1 class="font-bold text-3xl">User Who Like This Book</h1>
+            {% for fav in book.favorites.all %}
+            <ul class="list-disc list-inside">
+                <li>{{fav.first_name}} {{fav.last_name}}</li>
+            </ul>
+            {% endfor %}
+            {% if is_favorite == True %}
+            <a href="/remove_fav/{{book.id}}" class="text-blue-500 underline text-xl">Un-Favorite</a>
+            {% else %}
+            <a href="/add_fav/{{book.id}}" class="text-blue-500 underline text-xl">Favorite</a>
+            {% endif %}
+        </div>
+    </div>
+    {% else %}
+    <div class="w-90/100 mx-auto mt-10 flex ">
+        <div class="w-20/100 flex flex-col gap-y-3">
+            <h1 class="font-bold text-3xl">{{book.title}}</h1>
+            <p>Added by: {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}}</p>
+            <p>Added on: {{book.created_at}}</p>
+            <p>Last updated on: {{book.updated_at}}</p>
+            <div class="flex  gap-x-5">
+                <label for="user_desc">Description: </label><textarea name="user_desc" id="user_desc" cols="30" rows="5" disabled>{{book.desc}}</textarea>
+            </div>
+        </div>
+        <div class="w-40/100 mx-auto flex flex-col gap-y-3">
+            <h1 class="font-bold text-3xl">User Who Like This Book</h1>
+            {% for fav in book.favorites.all %}
+            <ul class="list-disc list-inside">
+                <li>{{fav.first_name}} {{fav.last_name}}</li>
+            </ul>
+            {% endfor %}
+            {% if is_favorite == True %}
+            <a href="/remove_fav/{{book.id}}" class="text-blue-500 underline text-xl">Un-Favorite</a>
+            {% else %}
+            <a href="/add_fav/{{book.id}}" class="text-blue-500 underline text-xl">Favorite</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>
