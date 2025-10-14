@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <nav class="flex justify-between w-98/100 mx-auto border-b-2 pb-5 mt-5">
+        <h1 class="font-bold text-3xl">CodingDojo Wall</h1>
+        <div class="flex items-center ">
+            <h2 class="text-2xl">Welcome {{ user.name }}</h2>
+            <a href="/logout" class="text-blue-500 underline ml-15">Log off</a>
+        </div>
+    </nav>
+    <main class="mt-5">
+        <div class="mt-5">
+            <form action="/wall/post_message" method="post" class="flex flex-col mx-auto w-60/100">
+                {% csrf_token %}
+                <div class="flex flex-col">
+                    <label for="msg" class="text-2xl mb-2">Post a message</label>
+                    <textarea name="msg" id="msg" cols="10" rows="5" class="border-2 rounded"></textarea>
+                </div>
+                <button type="submit"
+                        class="self-end border-2 p-1 bg-blue-500 text-white border-black shadow-[2px_2px_black] mt-5 text-xl cursor-pointer">
+                    Post a message
+                </button>
+            </form>
+            <ul class="w-60/100 mx-auto mt-5 list-inside">
+                {% for message in messages %}
+                <li class="text-xl font-bold">{{ message.user.firstname }} {{ message.user.lastname }} -
+                    {{ message.created_at }}
+                </li>
+                <li class="mx-auto w-95/100 mt-2">{{ message.message }}</li>
+                <li class="w-90/100 mx-auto">
+                    <ul class="list-inside">
+                        {% for comments in message.comments.all %}
+                        <li class="font-bold text-xl mt-5">{{ comments.users.firstname }} {{ comments.users.lastname }}
+                            -
+                            {{ comments.users.created_at }}
+                        </li>
+                        <li class="mt-2">{{ comments.comment }}</li>
+                        {% if request.session.id == comments.users.id %}
+                        <form action="/wall/delete/{{comments.id}}" method="post">
+                            {% csrf_token %}
+                            <button type="submit"
+                                    class="bg-red-600 p-1 border-1 border-black text-white shadow-[2px_2px_black] mt-5 cursor-pointer">
+                                Delete
+                            </button>
+                        </form>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+                <form action="/wall/post_comment/{{message.id}}" method="post"
+                      class="mt-10 flex flex-col w-90/100 mx-auto">
+                    {% csrf_token %}
+                    <div class="flex flex-col">
+                        <label for="comment" class="text-2xl mb-2">Post a comment</label>
+                        <textarea name="comment" id="comment" cols="10" rows="5" class="border-2 rounded"></textarea>
+                    </div>
+                    <button type="submit"
+                            class="self-end border-2 p-1 bg-green-500 text-white border-black shadow-[2px_2px_black] mt-5 text-xl cursor-pointer">
+                        Post a message
+                    </button>
+                </form>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
