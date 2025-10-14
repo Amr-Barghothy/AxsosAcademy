@@ -9,7 +9,8 @@ def index(request):
     if "id" not in request.session:
         return redirect('/')
     context = {
-        'messages': get_all_messages()
+        'messages': get_all_messages(),
+        'user': get_user_by_id(request.session['id']),
     }
     return render(request, 'wall.html', context)
 

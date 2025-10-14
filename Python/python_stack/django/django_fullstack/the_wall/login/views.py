@@ -30,7 +30,7 @@ def register(request):
         hashed_pw = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
         user_id = create_user(firstname, lastname, email, hashed_pw)
         request.session['id'] = ''
-        request.session['id'] = user_id[0].id
+        request.session['id'] = user_id.id
         return redirect(success)
 
 
