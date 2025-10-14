@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Description</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="w-80/100 mx-auto">
+        <div class="lg:w-[50%] xl:w-[40%] 2xl:w-[32%]">
+            <h1 class="font-bold text-3xl">Add a new course</h1>
+            <form action="/add_course" method="post" class="flex flex-col">
+                {% csrf_token %}
+                <div class="flex mt-10">
+                    <label for="name" class="w-30">Name</label>
+                    <input type="text" id="name" name="name" class="border-2 rounded w-100">
+                </div>
+                <div class="flex mt-10">
+                    <label for="description" class="w-30">Description</label>
+                    <textarea id="description" name="description" rows="5" cols="50"
+                              class="border-2 rounded w-100"></textarea>
+                </div>
+                <button type="submit"
+                        class="self-end border-2 rounded shadow-[2px_2px] p-1 w-18 mt-5 bg-green-600 text-white cursor-pointer">
+                    Add
+                </button>
+            </form>
+        </div>
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li class="text-red-600 font-bold">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <h2 class="font-bold text-3xl mt-10 mb-5">Courses</h2>
+        <table class="w-full border-2">
+            <tr class="bg-gray-300">
+                <th class="border-r-2 p-1">Course Name</th>
+                <th class="border-r-2 p-1">Description</th>
+                <th class="border-r-2 p-1">Date Added</th>
+                <th class="border-r-2 p-1">Action</th>
+            </tr>
+            {% for course in courses %}
+            <tr class="even:bg-gray-200 text-center">
+                <td class="border-r-2 p-1"> {{ course.name }}</td>
+                <td class="border-r-2 p-1">{{course.description.description}}</td>
+                <td class="border-r-2"> {{ course.created_at }}</td>
+                <td class="border-r-2 p-1"><a href="destroy/{{course.id}}"
+                                              class="text-blue-500 hover:text-blue-400 underline">remove</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
