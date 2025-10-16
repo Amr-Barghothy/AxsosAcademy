@@ -279,7 +279,7 @@ def delete_a_user(request, user_id):
     user = get_user_by_id(request.session['id'])
     if user[0].role == 'User' and int(user_id) != user[0].id:
         messages.error(request, 'You don\'t have permission')
-        return redirect('/users/edit')
+        return redirect('/dashboard')
     delete_user(user_id)
     return redirect('/dashboard/admin')
 

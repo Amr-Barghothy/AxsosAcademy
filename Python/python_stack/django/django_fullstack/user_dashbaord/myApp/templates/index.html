@@ -20,7 +20,8 @@
             <p class="text-4xl">We're going to build a cool application using a MVC framework! This application was
                 built with the
                 Village88 folks!!</p>
-            <a href="/signin" class="p-1 bg-blue-600 border-2 border-black rounded shadow-[2px_2px_black] text-white w-8/100 text-center">Start</a>
+            <a href="/signin"
+               class="p-1 bg-blue-600 border-2 border-black rounded shadow-[2px_2px_black] text-white w-8/100 text-center">Start</a>
         </div>
         <div class="flex items-center w-90/100 mx-auto gap-x-5 justify-between">
             <div class="flex flex-col gap-y-3 w-30/100">
@@ -38,6 +39,12 @@
                     name, etc).</p>
             </div>
         </div>
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{message}}</li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>
