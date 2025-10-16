@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amadon</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="h-[100vh]">
+    <div class="flex flex-col justify-center items-center my-auto h-90/100">
+        <h1 class="text-4xl mb-5">Amadon Store!</h1>
+        <table class="border-2 rounded">
+            <thead>
+                <tr>
+                    <th class="p-2 border-r-2">Item</th>
+                    <th class="p-2 border-r-2">Price</th>
+                    <th class="p-2 border-r-2">Quantity</th>
+                    <th class="p-2 border-r-2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in all_products %}
+                <tr>
+                    <form action="/checkout/{{product.id}}" method="post">
+                        {% csrf_token %}
+                        <td class="p-2 border-r-2">{{product.description}}</td>
+                        <td class="p-2 border-r-2"><input type="hidden" name="price" value="{{product.price}}">{{product.price}}</td>
+                        <td class="p-2 border-r-2"><select name="quantity" class="w-full border-2 rounded">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select></td>
+                        <td class="p-2 border-r-2"><input type="submit" value="Buy!" class="underline cursor-pointer text-blue-500"></td>
+                    </form>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
