@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <nav class="flex items-center justify-between w-80/100 mx-auto my-5">
+        <div class="flex items-center gap-x-10 align-center">
+            <h1 class="font-bold text-6xl">Test App</h1>
+            {% if user.role == "User" %}
+            <a href="/dashboard" class="text-5xl">Dashboard</a>
+            {% else %}
+            <a href="/dashboard/admin" class="text-5xl">Dashboard</a>
+            {% endif %}
+            <a href="/users/edit" class="text-5xl">Profile</a>
+        </div>
+        <a href="/logout" class="text-5xl">Log off</a>
+    </nav>
+    <div class="border-2"></div>
+
+    <div class="w-80/100 mx-auto">
+        <h1 class="font-bold text-3xl ml-9 my-10">Edit profile</h1>
+        <div class="flex justify-between ">
+            <div class="flex items-center mx-auto border-2 p-10 relative w-40/100">
+                <span class="absolute top-0 left-1/5 transform -translate-x-1/2 -mt-3 bg-white px-3 text-sm text-gray-700">Edit information</span>
+                <form action="/update_user/{{user.id}}" method="post" class="flex flex-col w-full">
+                    {% csrf_token %}
+                    <div class="flex flex-col  gap-x-10 my-3">
+                        <label for="email" class="text-xl">Email Address</label>
+                        <input type="email" name="email" id="email" value="{{ user.email }}" class="border-2 text-2xl">
+                    </div>
+                    <div class="flex flex-col  gap-x-10 my-3">
+                        <label for="firstname" class="text-xl">First Name:</label>
+                        <input type="text" name="firstname" id="firstname" value="{{ user.first_name }}"
+                               class="border-2 text-2xl">
+                    </div>
+                    <div class="flex flex-col  gap-x-10 my-3">
+                        <label for="lastname" class="text-xl">Last Name:</label>
+                        <input type="text" name="lastname" id="lastname" value="{{ user.last_name }}"
+                               class="border-2 text-2xl">
+                    </div>
+                    <button type="submit"
+                            class="self-end border-2 border-black text-white shadow-[2px_2px_black] bg-green-500 p-1 text-xl my-3 cursor-pointer rounded">
+                        Save
+                    </button>
+                </form>
+            </div>
+
+            <div class="flex h-fit mx-auto border-2 p-10 relative w-50/100">
+                <span class="absolute top-0 left-1/6 transform -translate-x-1/2 -mt-3 bg-white px-2 text-sm text-gray-700">Change Password</span>
+                <form action="/update_a_password/{{user.id}}" method="post" class="flex flex-col w-full">
+                    {% csrf_token %}
+                    <div class="flex flex-col  gap-x-10 my-3">
+                        <label for="password" class="text-xl">Password:</label>
+                        <input type="password" name="password" id="password" class="border-2 text-2xl">
+                    </div>
+                    <div class="flex flex-col  gap-x-10 my-3">
+                        <label for="confirm-pw" class="text-xl">Confirm Password:</label>
+                        <input type="password" name="confirm-pw" id="confirm-pw" class="border-2 text-2xl">
+                    </div>
+                    <button type="submit"
+                            class="self-end border-2 border-black text-white shadow-[2px_2px_black] bg-green-500 p-1 text-xl my-3 cursor-pointer rounded">
+                        Update Password
+                    </button>
+
+                </form>
+            </div>
+        </div>
+        <div class="flex items-center mx-auto border-2 p-10 relative w-95/100 my-10">
+            <span class="absolute top-0 left-1/8 transform -translate-x-1/2 -mt-3 bg-white px-3 text-sm text-gray-700">Edit Description</span>
+            <form action="/update_description/{{user.id}}" method="post" class="flex flex-col w-full">
+                {% csrf_token %}
+                <textarea name="desc" id="desc" cols="30" rows="5"
+                          class="w-full border-2 rounded">{{user.desc}}</textarea>
+                <button type="submit"
+                        class="self-end border-2 border-black text-white shadow-[2px_2px_black] bg-green-500 p-1 text-xl my-3 cursor-pointer rounded">
+                    Save
+                </button>
+            </form>
+        </div>
+    </div>
+    {% if messages %}
+    <ul class="ml-9 my-10 absolute top-10/100 left-43/100">
+        {% for message in messages %}
+        {% if 'error' in message.tags %}
+        <li class="font-bold text-red-600">{{message}}</li>
+        {% else %}
+        <li class="font-bold text-green-600">{{message}}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>

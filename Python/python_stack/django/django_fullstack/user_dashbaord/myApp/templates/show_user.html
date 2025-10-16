@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <nav class="flex items-center justify-between w-80/100 mx-auto my-5">
+        <div class="flex items-center gap-x-10 align-center">
+            <h1 class="font-bold text-6xl">Test App</h1>
+            {% if admin.role == "User" %}
+            <a href="/dashboard" class="text-5xl">Dashboard</a>
+            {% else %}
+            <a href="/dashboard/admin" class="text-5xl">Dashboard</a>
+            {% endif %}
+            <a href="/users/edit" class="text-5xl">Profile</a>
+        </div>
+        <a href="/logout" class="text-5xl">Log off</a>
+    </nav>
+    <div class="border-2"></div>
+
+    <div class="my-10 w-60/100 mx-auto flex flex-col gap-y-5">
+        <h1 class="font-bold text-3xl">{{user.first_name}} {{user.last_name}}</h1>
+        <p class="text-2xl">Registered at: {{user.created_at}}</p>
+        <p class="text-2xl">Email address: {{ user.email}}</p>
+        <p class="text-2xl">Description: {{user.desc}}</p>
+    </div>
+    <main class="mt-5">
+        <div class="mt-5">
+            <form action="/post_message/{{user.id}}" method="post" class="flex flex-col mx-auto w-60/100">
+                {% csrf_token %}
+                <div class="flex flex-col">
+                    <label for="msg" class="text-2xl mb-2">Leave a message for {{user.first_name}}</label>
+                    <textarea name="msg" id="msg" cols="10" rows="5" class="border-2 rounded p-1"></textarea>
+                </div>
+                <button type="submit"
+                        class="self-end border-2 p-1 bg-green-500 text-white border-black shadow-[2px_2px_black] mt-5 text-xl cursor-pointer">
+                    Post
+                </button>
+            </form>
+            <ul class="w-60/100 mx-auto mt-5 list-inside">
+                {% for message in user.messages.all %}
+                <li class="text-xl font-bold"><a href="/users/show/{{message.wrote_by.id}}"
+                                                 class="underline text-blue-500">{{ message.wrote_by.first_name }} {{
+                    message.wrote_by.last_name }}</a> Wrote
+                </li>
+                <li class="mt-2 flex flex-col mx-auto"><textarea name="written_msg" id="written_msg" cols="10" rows="5"
+                                                                 class="border-2 rounded p-1" disabled>{{ message.message }}</textarea>
+                </li>
+                <li class="ml-20 mx-auto">
+                    <ul class="list-inside ">
+                        {% for comments in message.comments.all %}
+                        <li class="font-bold text-xl mt-5">{{ comments.users.first_name }} {{ comments.users.last_name
+                            }}
+                        </li>
+                        <li class="mt-2 flex flex-col mx-auto"><textarea name="written_comment" id="written_comment"
+                                                                         cols="10" rows="5" class="border-2 rounded p-1"
+                                                                         disabled>{{ comments.comment }}</textarea></li>
+                        {% if request.session.id == comments.users.id %}
+                        <form action="/delete/{{user.id}}/{{comments.id}}" method="post">
+                            {% csrf_token %}
+                            <button type="submit"
+                                    class="bg-red-600 p-1 border-1 border-black text-white shadow-[2px_2px_black] mt-5 cursor-pointer">
+                                Delete
+                            </button>
+                        </form>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+                <form action="/post_comment/{{user.id}}/{{message.id}}" method="post"
+                      class="mt-10 flex flex-col ml-20 mx-auto">
+                    {% csrf_token %}
+                    <div class="flex flex-col">
+                        <label for="comment" class="text-2xl mb-2"></label>
+                        <textarea name="comment" id="comment" cols="10" rows="5" class="border-2 rounded p-1"
+                                  placeholder="Write a Comment"></textarea>
+                    </div>
+                    <button type="submit"
+                            class="self-end border-2 p-1 bg-green-500 text-white border-black shadow-[2px_2px_black] mt-5 text-xl cursor-pointer">
+                        Post
+                    </button>
+                </form>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

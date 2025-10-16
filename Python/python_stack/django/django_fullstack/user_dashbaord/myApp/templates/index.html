@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <nav class="flex items-center justify-between w-80/100 mx-auto my-5">
+        <div class="flex items-center gap-x-5">
+            <h1 class="font-bold text-6xl">Test App</h1>
+            <a href="/" class="text-5xl">Home</a>
+        </div>
+        <a href="/signin" class="text-5xl">Sign in</a>
+    </nav>
+    <div class="border-2"></div>
+    <div class="w-80/100 mx-auto">
+        <div class="bg-[#dddddd] my-10 p-10 flex flex-col gap-y-10 border-[#cccccc] border-7">
+            <h2 class="font-bold text-5xl">Welcome to the Test</h2>
+            <p class="text-4xl">We're going to build a cool application using a MVC framework! This application was
+                built with the
+                Village88 folks!!</p>
+            <a href="/signin" class="p-1 bg-blue-600 border-2 border-black rounded shadow-[2px_2px_black] text-white w-8/100 text-center">Start</a>
+        </div>
+        <div class="flex items-center w-90/100 mx-auto gap-x-5 justify-between">
+            <div class="flex flex-col gap-y-3 w-30/100">
+                <h3 class="text-4xl font-bold">Manage Users</h3>
+                <p class="text-3xl">Using this application, you'll learn how to add, remove, and edit users for
+                    application</p>
+            </div>
+            <div class="flex flex-col gap-y-3 w-30/100">
+                <h3 class="text-4xl font-bold">Leave messages</h3>
+                <p class="text-3xl">Users will be able to leave a message to another user using this application</p>
+            </div>
+            <div class="flex flex-col gap-y-3 w-30/100">
+                <h3 class="text-4xl font-bold">Edit User Information</h3>
+                <p class="text-3xl">Admins will be to edit another user's information (email address, first name, last
+                    name, etc).</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

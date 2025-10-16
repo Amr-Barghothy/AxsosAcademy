@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <nav class="flex items-center justify-between w-80/100 mx-auto my-5">
+        <div class="flex items-center gap-x-10 align-center">
+            <h1 class="font-bold text-6xl">Test App</h1>
+            {% if user.role == "User" %}
+            <a href="/dashboard" class="text-5xl">Dashboard</a>
+            {% else %}
+            <a href="/dashboard/admin" class="text-5xl">Dashboard</a>
+            {% endif %}
+            <a href="/users/edit" class="text-5xl">Profile</a>
+        </div>
+        <a href="/logout" class="text-5xl">Log off</a>
+    </nav>
+    <div class="border-2"></div>
+
+    <div class="w-80/100 mx-auto">
+        <div class="flex justify-between items-center mt-10">
+            <h2 class="text-4xl font-bold">Manage Users</h2>
+            <a href="/users/new"
+               class="bg-blue-600 text-white border-2 border-black shadow-[2px_2px_black] p-1 w-8/100 text-center">Add
+                new</a>
+        </div>
+        <table class="border-2 w-full mt-10 text-center">
+            <tr class="bg-gray-100">
+                <th class="p-2 border-r-2">ID</th>
+                <th class="p-2 border-r-2">Name^</th>
+                <th class="p-2 border-r-2">email</th>
+                <th class="p-2 border-r-2">created_at</th>
+                <th class="p-2 border-r-2">user_leve</th>
+                <th class="p-2 border-r-2">actions</th>
+
+            </tr>
+            {% for user in users %}
+            <tr class="even:bg-gray-200">
+                <td class="p-2 border-r-2">{{user.id}}</td>
+                <td class="p-2 border-r-2"><a href="/users/show/{{user.id}}" class="underline text-blue-500">{{user.first_name}}
+                    {{user.last_name}}</a></td>
+                <td class="p-2 border-r-2">{{user.email}}</td>
+                <td class="p-2 border-r-2">{{user.created_at}}</td>
+                <td class="p-2 border-r-2">{{user.role}}</td>
+                <td class="p-2 border-r-2"><a href="/users/edit/{{user.id}}" class="underline text-blue-500">edit</a> <a
+                        href="/delete_user/{{user.id}}" class="underline text-blue-500">remove</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

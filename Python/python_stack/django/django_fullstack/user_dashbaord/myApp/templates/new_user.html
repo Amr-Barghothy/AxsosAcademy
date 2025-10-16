@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <nav class="flex items-center justify-between w-80/100 mx-auto my-5">
+        <div class="flex items-center gap-x-10 align-center">
+            <h1 class="font-bold text-6xl">Test App</h1>
+            {% if user.role == "User" %}
+            <a href="/dashboard" class="text-5xl">Dashboard</a>
+            {% else %}
+            <a href="/dashboard/admin" class="text-5xl">Dashboard</a>
+            {% endif %}
+            <a href="/users/edit" class="text-5xl">Profile</a>
+        </div>
+        <a href="/logout" class="text-5xl">Log off</a>
+    </nav>
+    <div class="border-2"></div>
+
+    <div class="w-80/100 mx-auto mt-15 flex flex-col gap-y-10">
+        <div class="flex justify-between items-center">
+            <h1 class="font-bold text-5xl">Add a new user</h1>
+            <a href="/dashboard/admin"
+               class="bg-blue-600 text-white border-2 border-black shadow-[2px_2px_black] p-1 w-20/100 text-center">Return
+                to Dashboard</a>
+        </div>
+        <form action="/add/new/user" method="post" class="flex flex-col gap-y-8">
+            {% csrf_token %}
+            <div class="flex flex-col gap-y-3">
+                <label for="email" class="text-3xl">Email Address:</label>
+                <input type="email" name="email" id="email" class="border-2 rounded w-1/2 text-3xl">
+            </div>
+            <div class="flex flex-col gap-y-3">
+                <label for="firstname" class="text-3xl">First Name:</label>
+                <input type="text" name="firstname" id="firstname" class="border-2 rounded w-1/2 text-3xl">
+            </div>
+            <div class="flex flex-col gap-y-3">
+                <label for="lastname" class="text-3xl">Last Name:</label>
+                <input type="text" name="lastname" id="lastname" class="border-2 rounded w-1/2 text-3xl">
+            </div>
+            <div class="flex flex-col gap-y-3">
+                <label for="password" class="text-3xl">Password:</label>
+                <input type="password" name="password" id="password" class="border-2 rounded w-1/2 text-3xl">
+            </div>
+            <div class="flex flex-col gap-y-3">
+                <label for="confirm-pw" class="text-3xl">Password Confirmation:</label>
+                <input type="password" name="confirm-pw" id="confirm-pw" class="border-2 rounded w-1/2 text-3xl">
+            </div>
+            <div class="w-50/100 flex justify-end ">
+                <button type="submit"
+                        class="bg-green-600 text-white border-2 border-black shadow-[2px_2px_black] p-1 rounded text-xl cursor-pointer">
+                    Create
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
