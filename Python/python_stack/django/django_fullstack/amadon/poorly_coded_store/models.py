@@ -24,10 +24,13 @@ def get_all_products():
     return Product.objects.all()
 
 def get_order_by_id(order_id):
-    return Product.objects.filter(id=order_id)
+    return Order.objects.filter(id=order_id)
 
 def get_product_by_id(product_id):
     return Product.objects.get(id=product_id)
 
-def count_total_price(order_id):
-    return Order.objects.filter(id = order_id).annotate(sum_price=Count('total_price')).order_by('sum_price')
+def count_total_price():
+    return Order.objects.annotate(sum_price=Sum('total_price')).order_by('sum_price')
+
+def count_items():
+    return Order.objects.annotate(count=Count('quantity_ordered')).order_by('count')

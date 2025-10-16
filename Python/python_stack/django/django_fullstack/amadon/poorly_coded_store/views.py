@@ -23,10 +23,12 @@ def success(request):
     if not "order_id" in request.session:
         return redirect("/")
     order_id = request.session["order_id"]
-    order = get_order_by_id(2)
-    total_price = count_total_price(order_id)
+    order = get_order_by_id(order_id)
+    total_price = count_total_price()
+    total_quantity = count_items()
     context = {
         "order": order[0],
         "total_price": total_price,
+        'total_quantity': total_quantity
     }
-    return render(request, "checkout.html",context)
+    return render(request, "store/checkout.html",context)
