@@ -26,6 +26,7 @@ def success(request):
     order = get_order_by_id(order_id)
     total_price = count_total_price()
     total_quantity = count_items()
+    print(total_price)
     context = {
         "order": order[0],
         "total_price": total_price,
