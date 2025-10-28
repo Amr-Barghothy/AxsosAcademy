@@ -1,5 +1,3 @@
-import java.util.Date;
-
 public class AlfredTest {
     /*
      * This main method will always be the launch point for a Java application
@@ -25,6 +23,7 @@ public class AlfredTest {
 
         String greetingWithTimeOfTheDay = alfredBot.guestGreeting("Amr Barghothy", "Morning");
         String greetingWithTime = alfredBot.guestGreeting();
+        String message = alfredBot.alfredGreeting("We are learning Java today");
 
         // Print the greetings to test.
         System.out.println(testGreeting);
@@ -37,5 +36,6 @@ public class AlfredTest {
         System.out.println(notRelevantTest);
         System.out.println(greetingWithTimeOfTheDay);
         System.out.println(greetingWithTime);
+        System.out.println(message);
     }
 }

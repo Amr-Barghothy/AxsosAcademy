@@ -54,8 +54,7 @@ public class AlfredQuotes {
 
     // SENSEI BONUS
     // Write your own AlfredQuote method using any of the String methods you have learned!
-    public String alfredGreeting() {
-        String message = String.format("We are learning about %s ", "Java String");
+    public String alfredGreeting(String message) {
         System.out.println("Welcome to Alfred");
         System.out.println("what word are you looking for in your message?");
         Scanner scanner = new Scanner(System.in);
