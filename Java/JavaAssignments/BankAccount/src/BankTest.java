@@ -27,5 +27,8 @@ public class BankTest {
 
         // Static Test (print the number of bank accounts and the totalMoney)
         System.out.println(BankAccount.getAccounts());
+        System.out.println(acc1.getBankAccountNUmber());
+        System.out.println(acc2.getBankAccountNUmber());
+        System.out.println(acc3.getBankAccountNUmber());
     }
 }

@@ -1,9 +1,12 @@
+import java.util.Random;
+
 public class BankAccount {
     private static int accounts;
     private static double totalMoney; // refers to the sum of all bank account checking and savings balances
     // MEMBER VARIABLES
     private double checkingBalance;
     private double savingsBalance;
+    private long bankAccountNUmber;
 
     // CONSTRUCTOR
     // Be sure to increment the number of accounts
@@ -12,6 +15,7 @@ public class BankAccount {
         this.checkingBalance = checkingBalance;
         this.savingsBalance = savingsBalance;
         accounts++;
+        this.bankAccountNUmber = getBankNumber();
     }
 
     // GETTERS
@@ -31,6 +35,10 @@ public class BankAccount {
 
     public double getSavingsBalance() {
         return this.savingsBalance;
+    }
+
+    public long getBankAccountNUmber() {
+        return bankAccountNUmber;
     }
 
     // METHODS
@@ -65,5 +73,10 @@ public class BankAccount {
     // - display total balance for checking and savings of a particular bank account
     public double getBalance() {
         return this.checkingBalance + this.savingsBalance;
+    }
+
+    private long getBankNumber() {
+        Random rand  = new Random();
+        return (long)(rand.nextDouble() * (9999999999L - 1000000000L + 1)) + 1000000000L;
     }
 }
