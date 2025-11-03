@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CoffeeKiosk {
 
@@ -15,7 +16,6 @@ public class CoffeeKiosk {
         // Shows the user a message prompt and then sets their input to a variable, name
         System.out.println("Please enter customer name for new order:");
         String name = System.console().readLine();
-
         // Your code:
         // Create a new order with the given input string
         // Show the user the menu, so they can choose items to add.
@@ -27,9 +27,10 @@ public class CoffeeKiosk {
 
         // Prompts the user to enter an item number
         displayMenu();
-        System.out.println("Please enter a menu item index or q to quit:");
+        System.out.println("Please enter a menu item index or q to quit or m to enter an item:");
         String itemNumber = System.console().readLine();
         // Write a while loop to collect all user's order items
+        addAnItemManually(itemNumber);
         while (!itemNumber.equals("q")) {
             try {
                 int index = Integer.parseInt(itemNumber);
@@ -37,13 +38,26 @@ public class CoffeeKiosk {
             } catch (Exception e) {
                 System.out.println("Please select an item from the meny");
             }
-            System.out.println("Please enter a menu item index or q to quit:");
+            System.out.println("Please enter a menu item index or q to quit or m to enter an item:");
             itemNumber = System.console().readLine();
+            addAnItemManually(itemNumber);
             // Get the item object from the menu, and add the item to the order
             // Ask them to enter a new item index or q again, and take their input
         }
         // After you have collected their order, print the order details
         displayOrders(name);
+    }
+
+    private void addAnItemManually( String itemNumber) {
+        Scanner sc = new Scanner(System.in);
+        if(itemNumber.equals("m")) {
+            System.out.println("Please enter the name of the item");
+            String itemName = System.console().readLine();
+            System.out.println("Please enter the price of the item");
+            double itemPrice = sc.nextDouble();
+            addMenuItem(itemName,itemPrice);
+            displayMenu();
+        }
     }
 
     public void addMenuItem(String name, double price) {
