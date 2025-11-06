@@ -1,0 +1,15 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+    </head>
+    <body>
+        <h1>${name}</h1>
+        <p>Item Name: ${itemName}</p>
+        <p>Price: ${price}</p>
+        <p>Description: ${description}</p>
+        <p>Vendor: ${vendor}</p>
+    </body>
+</html>
