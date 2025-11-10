@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ninja Gold</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <div class="w-[80%] mx-auto mt-3">
+            <div class="">
+                <label for="gold">Your Gold: </label>
+                <input type="text" name="gold" id="gold" placeholder="[[${num}]]" disabled
+                       class="border-2 border-solid p-1 ml-5">
+            </div>
+            <div class="flex justify-between my-10">
+                <div class="border-2 border-solid p-1 w-[20%] mt-5 flex flex-col items-center justify-evenly h-50">
+                    <h1>Farm</h1>
+                    <p>(earn 10-20 gold)</p>
+                    <form method="post" action="/process_money">
+                        <button type="submit" name="farm" value="farm" class="border-2 p-1">Find gold</button>
+                    </form>
+                </div>
+                <div class="border-2 border-solid p-1 w-[20%] mt-5 flex flex-col items-center justify-evenly h-50">
+                    <h1>Cave</h1>
+                    <p>(earn 10-20 gold)</p>
+                    <form method="post" action="/process_money">
+                        <button type="submit" name="cave" value="cave" class="border-2 p-1">Find gold</button>
+                    </form>
+                </div>
+                <div class="border-2 border-solid p-1 w-[20%] mt-5 flex flex-col items-center justify-evenly h-50">
+                    <h1>House</h1>
+                    <p>(earn 10-20 gold)</p>
+                    <form method="post" action="/process_money">
+                        <button type="submit" name="house" value="house" class="border-2 p-1">Find gold</button>
+                    </form>
+                </div>
+                <div class="border-2 border-solid p-1 w-[20%] mt-5 flex flex-col items-center justify-evenly h-50">
+                    <h1>Quest</h1>
+                    <p>(earn/takes 0-50 gold)</p>
+                    <form method="post" action="/process_money">
+                        <button type="submit" name="quest" value="quest" class="border-2 p-1">Find gold</button>
+                    </form>
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <label for="popup" class="font-bold text-2xl mt-10">Activities:</label>
+                <div id="popup" class="border-2 p-4 mt-10 h-60 overflow-y-auto">
+                    <p th:each="value : ${session.activities}"
+                       th:classappend="${value.contains('earned') ? 'text-green-600' : 'text-red-600'}"
+                       th:text="${value}">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
