@@ -2,11 +2,13 @@ package com.example.ninjagold.controller;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Random;
 
@@ -23,7 +25,7 @@ public class NinjaGoldController {
                                @RequestParam(value = "cave", required = false) String cave,
                                @RequestParam(value = "house", required = false) String house,
                                @RequestParam(value = "quest", required = false) String quest,
-                               HttpSession session) {
+                               HttpSession session, Model model) {
 
         Date date = new Date();
 
@@ -36,11 +38,16 @@ public class NinjaGoldController {
             session.setAttribute("activities", activities);
         }
 
+        if(session.getAttribute("num") == null) {
+            session.setAttribute("num", 0);
+        }
+
         if (farm != null) {
             Random random = new Random();
             int min = 10;
             int max = 20;
             int randomNumber = random.nextInt(max - min + 1) + min;
+            session.setAttribute("num",(int) session.getAttribute("num") + randomNumber);
             activities.add("You entered a farm and earned " + randomNumber + " gold. " + date);
         }
 
@@ -49,6 +56,7 @@ public class NinjaGoldController {
             int min = 5;
             int max = 10;
             int randomNumber = random.nextInt(max - min + 1) + min;
+            session.setAttribute("num",(int) session.getAttribute("num") + randomNumber);
             activities.add("You entered a cave and earned " + randomNumber + " gold. " + date);
         }
 
@@ -57,6 +65,7 @@ public class NinjaGoldController {
             int min = 2;
             int max = 5;
             int randomNumber = random.nextInt(max - min + 1) + min;
+            session.setAttribute("num",(int) session.getAttribute("num") + randomNumber);
             activities.add("You entered a house and earned " + randomNumber + " gold. " + date);
         }
 
@@ -67,11 +76,17 @@ public class NinjaGoldController {
             int randomNumber = random.nextInt(max - min + 1) + min;
             int flag = random.nextInt(2);
             if (flag == 1) {
+                session.setAttribute("num",(int) session.getAttribute("num") + randomNumber);
                 activities.add("You completed a quest and earned " + randomNumber + " gold. " + date);
             } else {
+                session.setAttribute("num",(int) session.getAttribute("num") - randomNumber);
                 activities.add("You failed a quest and lost " + randomNumber + " gold. Ouch " + date);
             }
         }
+
+        ArrayList<String> temp = (ArrayList<String>) activities.clone();
+        Collections.reverse(temp);
+        session.setAttribute("temp",temp);
 
         return "redirect:/";
     }

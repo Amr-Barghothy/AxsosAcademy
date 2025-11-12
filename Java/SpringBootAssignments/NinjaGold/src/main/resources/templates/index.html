@@ -9,8 +9,9 @@
         <div class="w-[80%] mx-auto mt-3">
             <div class="">
                 <label for="gold">Your Gold: </label>
-                <input type="text" name="gold" id="gold" placeholder="[[${num}]]" disabled
+                <input type="text" name="gold" id="gold" th:value="${session.num}" disabled
                        class="border-2 border-solid p-1 ml-5">
+
             </div>
             <div class="flex justify-between my-10">
                 <div class="border-2 border-solid p-1 w-[20%] mt-5 flex flex-col items-center justify-evenly h-50">
@@ -45,7 +46,7 @@
             <div class="flex flex-col">
                 <label for="popup" class="font-bold text-2xl mt-10">Activities:</label>
                 <div id="popup" class="border-2 p-4 mt-10 h-60 overflow-y-auto">
-                    <p th:each="value : ${session.activities}"
+                    <p th:each="value : ${session.temp}"
                        th:classappend="${value.contains('earned') ? 'text-green-600' : 'text-red-600'}"
                        th:text="${value}">
                     </p>
