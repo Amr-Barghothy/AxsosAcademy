@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>[[${dojo.name}]] Ninjas</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body class="p-8 bg-white font-sans">
+        <h1 class="text-5xl text-center font-semibold mb-8">[[${dojo.name}]] Ninjas</h1>
+
+        <div class=" border border-black">
+            <table class="min-w-full border-collapse">
+                <thead>
+                    <tr class="bg-gray-300 border-b border-black">
+                        <th class="text-left px-4 py-2 border-r border-black">First Name</th>
+                        <th class="text-left px-4 py-2 border-r border-black">Last Name</th>
+                        <th class="text-left px-4 py-2">Age</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="ninja : ${dojo.ninjas}" class="even:bg-gray-100 border-b border-black">
+                        <td class="px-4 py-2 border-r border-black" th:text="${ninja.firstName}"></td>
+                        <td class="px-4 py-2 border-r border-black" th:text="${ninja.lastName}"></td>
+                        <td class="px-4 py-2" th:text="${ninja.age}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

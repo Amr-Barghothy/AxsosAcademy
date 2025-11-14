@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>New Dojo</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body class="p-8 bg-white font-sans">
+        <h1 class="text-3xl font-medium mb-6">New Dojo</h1>
+        <form th:action="@{/createDojo}" th:object="${dojo}" method="post" class="max-w-md flex flex-col">
+            <div class="mb-6 flex items-center">
+                <label for="name" class="w-32 text-base font-normal">Name:</label>
+                <input type="text" name="name" id="name"
+                       class="border border-gray-400 rounded px-2 py-1 w-full max-w-xs" />
+            </div>
+
+            <div class="self-end">
+                <button type="submit"
+                        class="bg-white border border-black px-6 py-1 rounded cursor-pointer hover:bg-gray-100">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </body>
+</html>
