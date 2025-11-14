@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Books</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+
+    <body class="bg-gray-100 min-h-screen p-6">
+
+        <div class="bg-white border border-gray-400 rounded-b-md p-6 shadow">
+
+            <h1 class="text-4xl font-bold mb-4">All Books</h1>
+
+            <table class="w-full border-collapse border border-gray-400 text-left">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="border border-gray-400 px-3 py-2">ID</th>
+                        <th class="border border-gray-400 px-3 py-2">Title</th>
+                        <th class="border border-gray-400 px-3 py-2">Language</th>
+                        <th class="border border-gray-400 px-3 py-2"># Pages</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr
+                            th:each="book, iter : ${books}"
+                            th:class="${iter.index % 2 == 0} ? 'bg-gray-100' : 'bg-white'"
+                    >
+                        <td class="border border-gray-300 px-3 py-2" th:text="${book.id}"></td>
+
+                        <td class="border border-gray-300 px-3 py-2">
+                            <a class="text-blue-600 underline hover:text-blue-800"
+                               th:href="@{/book/{id}(id=${book.id})}"
+                               th:text="${book.title}">
+                            </a>
+                        </td>
+
+                        <td class="border border-gray-300 px-3 py-2" th:text="${book.language}"></td>
+                        <td class="border border-gray-300 px-3 py-2" th:text="${book.numberOfPages}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </body>
+</html>
