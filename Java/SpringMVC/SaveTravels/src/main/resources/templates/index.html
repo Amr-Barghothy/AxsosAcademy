@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Save Travel</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+
+    <body>
+        <div class="w-70/100 mx-auto flex flex-col items-center">
+            <h1 class="text-3xl font-bold text-blue-700 mb-6 ">Save Travel</h1>
+
+            <div class="overflow-x-auto w-full mb-12">
+                <table class="w-full border border-gray-300 rounded-lg bg-white shadow-sm">
+                    <thead class="bg-gray-200">
+                        <tr class="text-center font-semibold">
+                            <th class="p-3 border-r border-gray-300">Expense</th>
+                            <th class="p-3 border-r border-gray-300">Vendor</th>
+                            <th class="p-3 border-r border-gray-300">Amount</th>
+                            <th class="p-3 border-gray-300">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                                th:each="travel : ${travels}"
+                                class="text-center hover:bg-gray-50"
+                        >
+                            <td class="p-3 border-r border-gray-200"><a th:href="@{/expenses/{id}(id=${travel.id})}" th:text="${travel.expenseName}" class="underline text-blue-600"></a></td>
+                            <td class="p-3 border-r border-gray-200" th:text="${travel.vendor}"></td>
+                            <td class="p-3 border-r border-gray-200" th:text="'$'+${travel.amount}"></td>
+                            <td class="p-3 text-blue-600 hover:underline flex space-x-5 items-center justify-center">
+                                <a th:href="@{/edit/{id}(id=${travel.id})}">Edit</a>
+                                <form th:action="@{/delete/travel/{id}(id=${travel.id})}" th:method="post">
+                                    <input type="hidden" name="_method" value="delete">
+                                    <button type="submit" th:text="Delete" class="bg-red-400 p-2 text-white cursor-pointer"></button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-white shadow-md rounded-lg p-6 max-w-xl w-full">
+                <h2 class="text-2xl font-bold text-blue-700 mb-2">Add an Expense:</h2>
+                <form
+                        th:action="@{/create}"
+                        th:object="${travel}"
+                        method="post"
+                        class="space-y-4 mx-auto flex flex-col"
+                >
+                    <div>
+                        <label for="expenseName" class="block font-semibold mb-1">Expense Name</label>
+                        <input
+                                type="text"
+                                th:field="*{expenseName}"
+                                id="expenseName"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                        />
+                        <span th:errors="*{expenseName}" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div>
+                        <label for="vendor" class="block font-semibold mb-1">Vendor</label>
+                        <textarea
+                                th:field="*{vendor}"
+                                id="vendor"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                        ></textarea>
+                        <span th:errors="*{vendor}" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div>
+                        <label for="amount" class="block font-semibold mb-1">Amount</label>
+                        <input
+                                type="text"
+                                th:field="*{amount}"
+                                id="amount"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                        />
+                        <span th:errors="*{amount}" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div>
+                        <label for="description" class="block font-semibold mb-1">Description</label>
+                        <textarea
+                                th:field="*{description}"
+                                id="description"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                        ></textarea>
+                        <span th:errors="*{description}" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div class="self-end">
+                        <input
+                                type="submit"
+                                value="Submit"
+                                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-md cursor-pointer"
+                        />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
