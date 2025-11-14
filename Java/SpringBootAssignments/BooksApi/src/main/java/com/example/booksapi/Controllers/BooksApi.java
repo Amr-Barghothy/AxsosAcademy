@@ -22,8 +22,9 @@ public class BooksApi {
         bookService.createBook(book2);
         return "Book created";
     }
-    // other methods removed for brevity
-    @RequestMapping("/api/books/{id}")
+
+
+    @PutMapping("/api/books/{id}")
     public Book update(
             @PathVariable("id") Long id,
             @RequestParam(value="title") String title,
@@ -34,7 +35,7 @@ public class BooksApi {
         return bookService.updateBook(id, title, desc, lang, numOfPages);
     }
 
-    @RequestMapping("/delete/books/{id}")
+    @DeleteMapping("/delete/books/{id}")
     public void destroy(@PathVariable("id") Long id) {
         bookService.deleteBook(id);
     }
