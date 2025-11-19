@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Manage Categories</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body class="bg-gray-50 min-h-screen">
+        <div class="container mx-auto px-4 py-8 max-w-4xl">
+            <div class="mb-8 flex justify-between items-start">
+                <a href="/" class="text-blue-600 hover:text-blue-800 font-medium flex items-center transition-colors">
+                    <i class="fas fa-home mr-2"></i>
+                    Home
+                </a>
+
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="bg-blue-600 px-6 py-4">
+                    <h1 class="text-2xl font-bold text-white text-center" th:text="${product.name}"></h1>
+                </div>
+
+                <div class="p-6">
+                    <div class="mb-6">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-tv mr-2 text-blue-600"></i>
+                            TV
+                        </h2>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-md font-medium text-gray-700 mb-3">Categories:</h3>
+                        <div class="bg-gray-50 rounded-md p-4">
+                            <ul class="space-y-2">
+                                <li th:each="category : ${product.categories}" class="flex items-center">
+                                    <i class="fas fa-folder mr-2 text-gray-400"></i>
+                                    <span th:text="${category.name}" class="text-gray-700"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-6">
+                        <h3 class="text-md font-medium text-gray-700 mb-3">Add Category:</h3>
+                        <form th:action="@{/products/{id}(id=${product.id})}" method="post" class="flex items-end space-x-3">
+                            <div class="flex-grow">
+                                <div class="relative">
+                                    <select
+                                            type="text"
+                                            name="category_id"
+                                            class="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                                        <option th:each="cat : ${excludedCategories}" th:value="${cat.id}" th:text="${cat.name}" ></option>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                        <i class="fas fa-chevron-down text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <button
+                                    type="submit"
+                                    class="px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors flex items-center">
+                                <i class="fas fa-plus mr-2"></i>
+                                Add
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

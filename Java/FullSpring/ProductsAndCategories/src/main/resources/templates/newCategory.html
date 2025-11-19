@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Category</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body class="bg-gray-50 min-h-screen">
+        <div class="container mx-auto px-4 py-8 max-w-2xl">
+            <div class="mb-8">
+                <a href="/" class="text-blue-600 hover:text-blue-800 font-medium flex items-center transition-colors">
+                    <i class="fas fa-home mr-2"></i>
+                    Home
+                </a>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="bg-blue-600 px-6 py-4">
+                    <h1 class="text-2xl font-bold text-white">New Category</h1>
+                </div>
+
+                <div class="p-6">
+                    <form th:action="@{/category/new}" th:object="${category}" method="post" class="space-y-6">
+                        <!-- Name field -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                                Name:
+                            </label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-folder text-gray-400"></i>
+                                </div>
+                                <input
+                                        type="text"
+                                        id="name"
+                                        th:field="*{name}"
+                                        class="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                        placeholder="Enter category name"
+                                        required>
+                            </div>
+                            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="mt-2 text-sm text-red-600"></p>
+                        </div>
+
+                        <!-- Submit button -->
+                        <div class="flex justify-end space-x-3 pt-4">
+                            <a href="/" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                                Cancel
+                            </a>
+                            <button
+                                    type="submit"
+                                    class="px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors flex items-center">
+                                <i class="fas fa-save mr-2"></i>
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body class="bg-gray-50 min-h-screen">
+        <header class="bg-white shadow-sm border-b">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-6">
+                    <h1 class="text-3xl font-bold text-gray-900">Home Page</h1>
+                    <div class="flex space-x-4">
+                        <a th:href="@{/products/new}" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300 flex items-center">
+                            <i class="fas fa-plus mr-2"></i>
+                            New Product
+                        </a>
+                        <a th:href="@{/category/new}" class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300 flex items-center">
+                            <i class="fas fa-plus mr-2"></i>
+                            New Category
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Products
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Categories
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <ul class="space-y-2">
+                                    <li th:each="product : ${products}" class="flex items-center">
+                                        <a th:href="@{/products/{id}(id=${product.id})}" th:text="${product.name}"
+                                           class="text-blue-600 hover:text-blue-800 hover:underline flex items-center">
+                                            <i class="fas fa-box mr-2 text-gray-400"></i>
+                                            <span th:text="${product.name}"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <ul class="space-y-2">
+                                    <li th:each="category : ${categories}" class="flex items-center">
+                                        <a th:href="@{/category/{id}(id=${category.id})}" th:text="${category.name}"
+                                           class="text-blue-600 hover:text-blue-800 hover:underline flex items-center">
+                                            <i class="fas fa-folder mr-2 text-gray-400"></i>
+                                            <span th:text="${category.name}"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div th:if="${#lists.isEmpty(products)} and ${#lists.isEmpty(categories)}"
+                     class="text-center py-12">
+                    <i class="fas fa-inbox text-gray-400 text-5xl mb-4"></i>
+                    <p class="text-gray-500 text-lg">No products or categories yet. Create your first one!</p>
+                </div>
+            </div>
+        </main>
+
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Product</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray-50 min-h-screen">
+        <div class="container mx-auto px-4 py-8 max-w-2xl">
+            <div class="mb-8">
+                <a href="/" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                    </svg>
+                    Home
+                </a>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h1 class="text-2xl font-bold text-gray-800 mb-6">New Product</h1>
+
+                <form th:action="@{/products/new}" th:object="${product}" method="post" class="space-y-6">
+                    <div th:field="*{name}" class="grid grid-cols-4 gap-4 items-center">
+                        <label for="name" class="text-right font-medium text-gray-700">Name:</label>
+                        <input
+                                type="text"
+                                id="name"
+                                th:field="*{name}"
+                                class="col-span-3 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="Enter product name">
+                        <span th:errors="*{name}" class="text-red-500 text-sm"></span>
+                    </div>
+
+
+                    <div class="grid grid-cols-4 gap-4 items-center">
+                        <label th:field="*{description}" for="description" class="text-right font-medium text-gray-700">Description:</label>
+                        <input
+                                type="text"
+                                id="description"
+                                th:field="*{description}"
+                                class="col-span-3 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="Enter product description">
+                        <span th:errors="*{description}" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div class="grid grid-cols-4 gap-4 items-center">
+                        <label for="price" class="text-right font-medium text-gray-700">Price:</label>
+                        <input
+                                type="number"
+                                id="price"
+                                th:field="*{price}"
+                                step="0.01"
+                                class="col-span-3 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <div class="flex justify-end mt-8">
+                        <button
+                                type="submit"
+                                class="px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
