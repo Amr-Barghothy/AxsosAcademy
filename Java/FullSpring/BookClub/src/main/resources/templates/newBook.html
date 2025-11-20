@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <a th:href="@{/books}" class="underline text-blue-500 absolute top-7 right-20">back to shelves</a>
+        <div class="w-50/100 h-[95vh] ml-80 mt-30">
+            <h1 class="mb-10 text-3xl font-bold">Add a Book to Your Shelf!</h1>
+            <form th:action="@{/addBook}" th:method="post" th:object="${book}" class="flex flex-col space-y-10 mt-5">
+                <div class="flex space-x-40 items-center">
+                    <label for="title" class="w-40">Title</label>
+                    <input th:field="*{title}" type="text" name="title" id="title" class="form-input w-full px-3 py-2 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <span th:errors="*{title}" class="text-red-500 text-sm"></span>
+                </div>
+
+                <div class="flex space-x-40 items-center">
+                    <label for="author" class="w-40">Author</label>
+                    <input th:field="*{author}" type="text" name="author" id="author" class="form-input w-full px-3 py-2 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <span th:errors="*{author}" class="text-red-500 text-sm"></span>
+                </div>
+
+                <div class="flex space-x-40">
+                    <label for="thoughts" class="w-40">my Thoughts</label>
+                    <textarea rows="7" th:field="*{thoughts}" type="text" name="thoughts" id="thoughts" class="form-input w-full px-3 py-2 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    <span th:errors="*{thoughts}" class="text-red-500 text-sm"></span>
+                </div>
+
+                <button type="submit" class="self-end border-2 p-1 shadow-[2px_2px]">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

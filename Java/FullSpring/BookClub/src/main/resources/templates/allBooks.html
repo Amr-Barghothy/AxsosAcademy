@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Books</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <div class="flex flex-col space-y-4 w-80/100 mx-auto mt-10">
+            <div class="flex justify-between items-center">
+                <h1 th:text="Welcome + ${user.name}" class="text-4xl font-bold"></h1>
+                <a th:href="@{/logout}" th:text="logout" class="underline text-blue-500"></a>
+            </div>
+            <div class="flex justify-between items-center gap-10">
+                <p>Books from everyone's shelves</p>
+                <a th:href="@{/books/new}" class="underline text-blue-500"> + Add a book to my shelf</a>
+            </div>
+
+            <table class="border-2">
+                <thead>
+                    <tr class="bg-gray-300">
+                        <th class="p-2 border-r-2">ID</th>
+                        <th class="p-2 border-r-2">Title</th>
+                        <th class="p-2 border-r-2">Author Name</th>
+                        <th class="p-2 border-r-2">Posted By</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="book : ${books}" class="even:bg-gray-200 text-center">
+                        <td class="p-2 border-r-2" th:text="${book.id}"></td>
+                        <td class="p-2 border-r-2"><a th:href="@{/books/{book_id}(book_id=${book.id})}" th:text="${book.title}" class="underline text-blue-500"></a></td>
+                        <td class="p-2 border-r-2" th:text="${book.author}"></td>
+                        <td class="p-2 border-r-2" th:text="${book.user.name}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

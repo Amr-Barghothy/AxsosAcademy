@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome - Register & Login</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+
+    <body class="min-h-screen bg-custom-blue flex items-center justify-center p-4">
+        <div class="w-full max-w-md">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-white mb-2">Welcome!</h1>
+                <p class="text-lg text-white">Join our growing community.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-4">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Register</h2>
+                <form method="post" th:action="@{/register}" th:object="${user}" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                        <input th:field="*{name}" type="text" id="name" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        <span th:errors="*{name}" class="text-red-500 text-sm"></span>
+
+                    </div>
+                    <div>
+                        <label for="regEmail" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input th:field="*{email}" type="email" id="regEmail" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        <span th:errors="*{email}" class="text-red-500 text-sm"></span>
+                    </div>
+                    <div>
+                        <label for="regPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <input th:field="*{password}" type="password" id="regPassword"  class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        <span th:errors="*{password}" class="text-red-500 text-sm"></span>
+                    </div>
+                    <div>
+                        <label for="regConfirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Confirm PW</label>
+                        <input th:field="*{confirmPassword}" type="password" id="regConfirmPassword" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        <span th:errors="*{confirmPassword}" class="text-red-500 text-sm"></span>
+                    </div>
+                    <button type="submit" class="w-full bg-gray-400 hover:bg-gray-500 text-white font-medium py-2 px-4 rounded-md transition duration-300 cursor-pointer">Submit</button>
+                </form>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Log In</h2>
+                <form method="post" th:action="@{/login}" th:object="${loginUser}" class="space-y-4">
+                    <div>
+                        <label for="loginEmail" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input th:field="*{loginEmail}" type="email" id="loginEmail" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        <span th:errors="*{loginEmail}" class="text-red-500 text-sm"></span>
+                    </div>
+                    <div>
+                        <label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <input th:field="*{loginPassword}" type="password" id="loginPassword" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        <span th:errors="*{loginPassword}" class="text-red-500 text-sm"></span>
+                    </div>
+                    <button type="submit" class="w-full bg-gray-400 hover:bg-gray-500 text-white font-medium py-2 px-4 rounded-md transition duration-300 cursor-pointer">Submit</button>
+                </form>
+            </div>
+            <span th:text="${error}" class="text-red-500 text-sm"></span>
+        </div>
+
+    </body>
+</html>

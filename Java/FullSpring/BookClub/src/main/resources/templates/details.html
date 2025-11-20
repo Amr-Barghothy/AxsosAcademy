@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Details</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <div class="w-80/100 mx-auto">
+            <div class="flex flex-col justify-between space-y-5">
+                <h1 class="text-3xl font-bold mb-20" th:text="${book.title}"></h1>
+                <a th:href="@{/books}" class="underline text-blue-500 fixed top-10 right-15">back to shelves</a>
+
+                <h2 class="text-2xl"><span class="text-red-400" th:text="${book.user.name}"></span> read <span
+                        class="text-purple-400" th:text="${book.title}"></span> by <span class="text-green-400"
+                                                                                          th:text="${book.author}"></span>
+                </h2>
+                <h3 th:text="'Here are ' + ${book.user.name} + '\'s thoughts'"></h3>
+            </div>
+
+            <div class="w-90/100 mx-auto my-10 flex flex-col space-y-10">
+                <div class="border-2 rounded-lg h-1"></div>
+                <p th:text="${book.thoughts}"></p>
+                <div class="border-2 rounded-lg h-1"></div>
+            </div>
+        </div>
+    </body>
+</html>
