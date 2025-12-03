@@ -1,6 +1,6 @@
 const Card = require("./Card.js");
 class Units extends Card {
-    constructor(name,cost,res,power) {
+    constructor(name,cost,power,res) {
         super(name,cost)
         this.res = res
         this.power = power
@@ -9,3 +9,4 @@ class Units extends Card {
         target.res -= this.power
     }
 }
+module.exports = Units

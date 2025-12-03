@@ -1,3 +1,4 @@
+const Units = require("./Units.js");
 const Card = require("./Card.js");
 class Effects extends Card {
     constructor(name,cost,text,stat,mag) {
@@ -10,13 +11,13 @@ class Effects extends Card {
     play(target) {
         if (target instanceof Units) {
             if (this.stat === "resilience") {
-                if (this.text === "Raise") {
+                if (this.text.includes("increase")) {
                     target.res += this.mag;
                 } else {
                     target.res -= this.mag;
                 }
             } else {
-                if (this.text === "Raise") {
+                if (this.text === "increase") {
                     target.power += this.mag;
                 } else {
                     target.power -= this.mag;
@@ -28,3 +29,4 @@ class Effects extends Card {
         }
     }
 }
+module.exports = Effects;
