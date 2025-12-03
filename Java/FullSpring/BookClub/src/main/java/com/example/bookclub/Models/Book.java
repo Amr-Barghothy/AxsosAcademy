@@ -30,6 +30,10 @@ public class Book {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "comment_id")
+    private User commentedUser;
+
     public Book(String title, String author, String thoughts) {
         this.title = title;
         this.author = author;

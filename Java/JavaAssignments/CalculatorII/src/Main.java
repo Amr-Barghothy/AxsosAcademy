@@ -42,7 +42,6 @@ public class Main {
     }
 
     public static void performOperation(String operation) {
-        String topOp;
         if (operation.equals("^")) {
             stack.push(operation);
         } else if (operation.equals("+") || operation.equals("-") || operation.equals("*") || operation.equals("/")) {

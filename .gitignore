@@ -4,3 +4,7 @@
 /.idea/
 __pycache__/
 db.sqlite3
+*.iml
+*.class
+/Java/DataStructure/
+/Java/SpringBootAssignments/DojosAndNinjas/node_modules/

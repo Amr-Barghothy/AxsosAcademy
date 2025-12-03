@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Black">
-    <option name="sdkName" value="Python 3.13 (new_web)" />
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/Route/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/HelloHuman/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/PathVariables/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/SimpleReceipt/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/TimeDisplay/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/FruitsLoops/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/OmikujiForm/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/Counter/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/NinjaGold/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/BooksApi/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/RenderingBooks/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/BurgerTrackerI/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/BurgerTrackerII/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/DojosAndNinjas/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringMVC/RenderingAllBooks/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringMVC/DojosAndNinjas/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/FullSpring/DojosAndNinjas/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringMVC/BooksApi/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringMVC/BurgerTrackerI/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringMVC/BurgerTrackerII/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringMVC/RenderingBooks/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringMVC/SaveTravels/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/FullSpring/LoginAndRegistration/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/FullSpring/BookClub/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/FullSpring/ProductsAndCategories/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/FullSpring/QueriesAndJoins/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/FullSpring/practicalExam/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Java/FullSpring/practicalExam/pom.xml" />
+        <option value="$PROJECT_DIR$/Java/SpringBootAssignments/demo/pom.xml" />
+      </set>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 (new_web)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="openjdk-22" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="jpab" />
+  </component>
 </project>

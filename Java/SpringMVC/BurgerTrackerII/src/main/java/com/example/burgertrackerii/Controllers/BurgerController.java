@@ -40,11 +40,12 @@ public class BurgerController {
         return "edit";
     }
 
-    @PutMapping("update/{id}")
-    public String updateBurger(@PathVariable Long id,@Valid @ModelAttribute("burger") Burger burger, BindingResult result, Model model) {
+    @PutMapping("/edit/{id}")
+    public String updateBurger(@Valid @ModelAttribute("burger") Burger burger, BindingResult result, @PathVariable Long id, Model model) {
         System.out.println("Im Here");
         if (result.hasErrors()) {
-            model.addAttribute("burger", burger);
+            model.addAttribute("id", id);
+            System.out.println(id);
             return "edit";
         } else {
             burgerServices.updateBurger(id, burger);

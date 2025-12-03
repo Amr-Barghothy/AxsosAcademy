@@ -6,7 +6,6 @@ import com.example.productsandcategories.Repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -31,14 +30,6 @@ public class CategoryService {
     }
 
     public List<Category> categoriesNotON(Product product) {
-        List<Category> pArr = product.getCategories();
-        List<Category> cArr = getAllCategories();
-        List<Category> Aux = new ArrayList<Category>();
-        for (Category category : cArr) {
-            if (!pArr.contains(category)) {
-                Aux.add(category);
-            }
-        }
-        return Aux;
+        return categoryRepository.findByProductsNot(product);
     }
 }

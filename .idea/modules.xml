@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/py_web.iml" filepath="$PROJECT_DIR$/.idea/py_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/AbstractArt/AbstractArt.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/AbstractArt/AbstractArt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/AlfredBot/AlfredBot.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/AlfredBot/AlfredBot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/DataStructure/BST/BST.iml" filepath="$PROJECT_DIR$/Java/DataStructure/BST/BST.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/BankAccount/BankAccount.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/BankAccount/BankAccount.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/Barista/Barista.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/Barista/Barista.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/CafeJava/CafeJava.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/CafeJava/CafeJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/CalculatorI/CalculatorI.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/CalculatorI/CalculatorI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/CalculatorII/CalculatorII.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/CalculatorII/CalculatorII.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/CareSoft Interface/CareSoft Interface.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/CareSoft Interface/CareSoft Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/CoffeApp/CoffeApp.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/CoffeApp/CoffeApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/Devices/Devices.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/Devices/Devices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/DataStructure/DoubleLinkedList/DoubleLinkedList.iml" filepath="$PROJECT_DIR$/Java/DataStructure/DoubleLinkedList/DoubleLinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/JavaCafe/JavaCafe.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/JavaCafe/JavaCafe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/DataStructure/LinkedList/LinkedList.iml" filepath="$PROJECT_DIR$/Java/DataStructure/LinkedList/LinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/ListOfExceptions/ListOfExceptions.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/ListOfExceptions/ListOfExceptions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/MapOfTheHashmatique/MapOfTheHashmatique.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/MapOfTheHashmatique/MapOfTheHashmatique.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/Numbers Game/Numbers Game.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/Numbers Game/Numbers Game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/OrdersAndItems/OrdersAndItems.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/OrdersAndItems/OrdersAndItems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/Puzzle/Puzzle.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/Puzzle/Puzzle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/DataStructure/Queue/Queue.iml" filepath="$PROJECT_DIR$/Java/DataStructure/Queue/Queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/ZooKeepers/ZooKeepers.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/ZooKeepers/ZooKeepers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/React/React_Intro/first_jsx.iml" filepath="$PROJECT_DIR$/React/React_Intro/first_jsx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/React/React_Intro/react_intro.iml" filepath="$PROJECT_DIR$/React/React_Intro/react_intro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web_java.iml" filepath="$PROJECT_DIR$/web_java.iml" />
     </modules>
   </component>
 </project>
