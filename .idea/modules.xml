@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/web_mern.iml" filepath="$PROJECT_DIR$/.idea/web_mern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/AbstractArt/AbstractArt.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/AbstractArt/AbstractArt.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/AlfredBot/AlfredBot.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/AlfredBot/AlfredBot.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java/DataStructure/BST/BST.iml" filepath="$PROJECT_DIR$/Java/DataStructure/BST/BST.iml" />
