@@ -9,4 +9,7 @@ db.sqlite3
 /Java/DataStructure/
 /Java/SpringBootAssignments/DojosAndNinjas/node_modules/
 /JS/solving/
-/React/React_Intro/
+/package.json
+/package-lock.json
+/tsconfig.json
+/node_modules/
