@@ -8,4 +8,6 @@ let unhandled = new Effects("Unhandled Promise Rejection",1,"reduce target's res
 let pairProgramming = new Effects("Pair Programming",3,"increase target's resilience by 2","resilience",2)
 
 redBelt.attack(blackBelt)
-
+console.log(blackBelt.res)
+hardAlgo.play(blackBelt)
+console.log(blackBelt.res)
