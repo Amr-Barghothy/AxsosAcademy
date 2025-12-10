@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/web_mern.iml" filepath="$PROJECT_DIR$/.idea/web_mern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/AbstractArt/AbstractArt.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/AbstractArt/AbstractArt.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/AlfredBot/AlfredBot.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/AlfredBot/AlfredBot.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java/DataStructure/BST/BST.iml" filepath="$PROJECT_DIR$/Java/DataStructure/BST/BST.iml" />
@@ -24,9 +23,10 @@
       <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/Puzzle/Puzzle.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/Puzzle/Puzzle.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java/DataStructure/Queue/Queue.iml" filepath="$PROJECT_DIR$/Java/DataStructure/Queue/Queue.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java/JavaAssignments/ZooKeepers/ZooKeepers.iml" filepath="$PROJECT_DIR$/Java/JavaAssignments/ZooKeepers/ZooKeepers.iml" />
-      <module fileurl="file://$PROJECT_DIR$/React/React_Intro/first_jsx.iml" filepath="$PROJECT_DIR$/React/React_Intro/first_jsx.iml" />
-      <module fileurl="file://$PROJECT_DIR$/React/React_Intro/react_intro.iml" filepath="$PROJECT_DIR$/React/React_Intro/react_intro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MERN/React_Intro/first_jsx.iml" filepath="$PROJECT_DIR$/MERN/React_Intro/first_jsx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MERN/React_Intro/react_intro.iml" filepath="$PROJECT_DIR$/MERN/React_Intro/react_intro.iml" />
       <module fileurl="file://$PROJECT_DIR$/web_java.iml" filepath="$PROJECT_DIR$/web_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/web_mern.iml" filepath="$PROJECT_DIR$/.idea/web_mern.iml" />
     </modules>
   </component>
 </project>
