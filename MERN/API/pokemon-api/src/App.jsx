@@ -18,7 +18,8 @@ function App() {
     return (
         <>
             <div className={"flex items-center flex-col text-center"}>
-                <button className={"bg-gray-300 p-3 cursor-pointer w-1/4"} onClick={() => setClicked(true)}>Fetch
+                <button className={"bg-[#000000ff]"} onClick={() => setClicked(true)}>Fetch
+
                     Pokemon
                 </button>
                 <ul>
