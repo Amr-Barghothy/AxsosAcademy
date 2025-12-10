@@ -25,8 +25,8 @@ const Info = () => {
             {data && cat === "planets" && (
                 <div>
                     <h1>{data.name}</h1>
-                    <p><span className={"font-bold"}>Height:</span> {data.height}cm</p>
-                    <p><span className={"font-bold"}>rotation period:</span> {data.rotation_period} KG</p>
+                    <p><span className={"font-bold"}>gravity:</span> {data.gravity}</p>
+                    <p><span className={"font-bold"}>rotation period:</span> {data.rotation_period}</p>
                     <p><span className={"font-bold"}>orbital period:</span> {data.orbital_period}</p>
                     <p><span className={"font-bold"}>diameter:</span> {data.diameter}</p>
                 </div>
@@ -35,8 +35,8 @@ const Info = () => {
             {data && cat === "starships" && (
                 <div>
                     <h1>{data.name}</h1>
-                    <p><span className={"font-bold"}>Height:</span> {data.height}cm</p>
-                    <p><span className={"font-bold"}>model:</span> {data.model} KG</p>
+                    <p><span className={"font-bold"}>starship_class:</span> {data.starship_class}</p>
+                    <p><span className={"font-bold"}>model:</span> {data.model}</p>
                     <p><span className={"font-bold"}>manufacturer:</span> {data.manufacturer}</p>
                     <p><span className={"font-bold"}>consumables:</span> {data.consumables}</p>
                 </div>
