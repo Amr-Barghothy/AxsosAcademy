@@ -2,6 +2,7 @@ import './App.css'
 
 function App() {
     function tossCoin() {
+        // eslint-disable-next-line react-hooks/purity
         return Math.random() > 0.5 ? "heads" : "tails";
     }
 
