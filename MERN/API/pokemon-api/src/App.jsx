@@ -1,18 +1,20 @@
 import './App.css'
 import {useEffect, useState} from "react";
-import axios from "axios";
 
 function App() {
     const [pok, setPok] = useState([])
     const [clicked, setClicked] = useState(false)
-    useEffect(() => {
-        axios.get("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0").then((response) => {
-            const names = response.data.results.map(x => x.name)
-            setPok(names)
-            console.log(names)
-        })
 
-    }, [clicked]);
+        useEffect( () => {
+         fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0").then((res) => res.json()).then((res=> {
+             const data = [...res.results]
+             console.log(data)
+             setPok(data)
+         }))
+        }, [clicked]);
+
+
+
     return (
         <>
             <div className={"flex items-center flex-col text-center"}>
@@ -22,7 +24,7 @@ function App() {
                 <ul>
                     {clicked && (
                         pok.map((item, index) => (
-                            <li className={'list-disc text-2xl list-inside'} key={index}>{item}</li>
+                            <li className={'list-disc text-2xl list-inside'} key={index}>{item.name}</li>
                         ))
                     )}
                 </ul>
