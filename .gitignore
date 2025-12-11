@@ -15,3 +15,5 @@ db.sqlite3
 /node_modules/
 /MERN/Assignemnts/
 /TS/
+/server/
+/MERN/API/FakerAPI/node_modules/
