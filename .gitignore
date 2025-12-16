@@ -17,6 +17,6 @@ db.sqlite3
 /TS/
 /server/
 /MERN/API/FakerAPI/node_modules/
-/MERN/API/Jokes_API/.env
+*.env
 /MERN/API/Jokes_API/node_modules/
-/MERN/FullStackMern/ProductManager1/server/node_modules/
+*node_modules/
