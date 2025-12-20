@@ -23,13 +23,16 @@ module.exports.findAuthor = async (req, res) => {
 
 module.exports.createAuthor = async (req, res) => {
     try {
-        const answer = await Author.create(req.body)
-        res.json(answer)
+        const answer = await Author.create(req.body);
+        res.json(answer);
     } catch (error) {
-        console.log(error)
-        return res.status(400).send({error: error.message})
+        if (error.name === "ValidationError") {
+            return res.status(400).json(error.errors);
+        }
+        return res.status(500).json({ message: "Server error" });
     }
-}
+};
+
 
 
 module.exports.updateAuthor = async (req, res) => {
@@ -37,11 +40,14 @@ module.exports.updateAuthor = async (req, res) => {
         const resp = await Author.findByIdAndUpdate(
             req.params.id,
             req.body,
-            {new: true, runValidators: true}
-        )
-        res.json(resp)
+            { new: true, runValidators: true }
+        );
+        res.json(resp);
     } catch (error) {
-        return res.status(400).send({error: error.message})
+        if (error.name === "ValidationError") {
+            return res.status(400).json(error.errors);
+        }
+        return res.status(500).json({ message: "Server error" });
     }
 };
 

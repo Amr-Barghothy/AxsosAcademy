@@ -57,7 +57,7 @@ const Form = () => {
                 )}
             </label>
             <div className={"flex space-x-lg"}>
-                <Button type={"submit"} text={"Submit"} name={name} id={id}/>
+                <Button type={"submit"} text={"Submit"} name={name} id={id} error={setError}/>
                 <Button type={"reset"} text={"Cancel"}/>
             </div>
         </div>

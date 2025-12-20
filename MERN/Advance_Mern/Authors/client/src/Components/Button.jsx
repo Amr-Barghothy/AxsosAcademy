@@ -4,7 +4,7 @@ import axios from "axios";
 import {useDispatch} from "react-redux";
 import {addAuthor, updateAuthor} from "../store/redux/authorSlice.jsx";
 
-const Button = ({type, text, name, id}) => {
+const Button = ({type, text, name, id, error}) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -18,19 +18,24 @@ const Button = ({type, text, name, id}) => {
                 const res = await axios.post("http://localhost:8000/api/author", {name: name})
                 const data = res.data
                 dispatch(addAuthor(data))
-            } catch (error) {
-                console.log(error)
+                navigate("/authors")
+            } catch (e) {
+                if (e.response?.data?.name?.message) {
+                    error(e.response.data.name.message);
+                }
             }
         } else {
             try {
                 const res = await axios.patch(`http://localhost:8000/api/author/${id}`, {name: name})
                 const data = res.data
                 dispatch(updateAuthor(data))
+                navigate("/authors")
             } catch (e) {
-                console.log(e)
+                if (e.response?.data?.name?.message) {
+                    error(e.response.data.name.message);
+                }
             }
         }
-        navigate("/authors")
     }
 
     return (
